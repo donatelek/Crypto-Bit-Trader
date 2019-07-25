@@ -20,7 +20,7 @@ class App extends Component {
     if(!token){
        return
     }
-    fetch('http://localhost:3005/getlocalstorage',{
+    fetch('https://crypto-tool-server.herokuapp.com/getlocalstorage',{
       method:'post',
       headers:{'Content-Type':'application/json'},
       body: JSON.stringify({

@@ -64,7 +64,7 @@ class Register extends Component {
         const email=this.state.email
         const password=this.state.password
         const referral=this.state.referralCode
-        fetch('http://localhost:3005/register',{
+        fetch('https://crypto-tool-server.herokuapp.com/register',{
             method:'post',
             headers:{'Content-Type':'application/json'},
             body: JSON.stringify({
