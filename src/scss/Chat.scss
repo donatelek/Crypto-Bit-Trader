@@ -1,0 +1,218 @@
+@mixin chatHeight {
+    @media (max-height: 750px) {
+        @content;
+    }
+}
+
+@mixin s-chatHeight {
+    @media (max-height: 615px) {
+        @content;
+    }
+}
+
+@mixin s-mobile {
+    @media (max-width: 440px) {
+        @content;
+    }
+}
+
+
+.chatForm {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    height: 700px;
+    // height: 1400px;
+    width: 400px;
+    border-radius: 15px;
+    overflow: hidden;
+    color: white;
+    border: 1px solid rgb(107, 94, 94);
+    background-color: #1D2026;
+    z-index: 99;
+
+    @include chatHeight {
+        height: 575px;
+    }
+
+    @include s-chatHeight {
+        bottom: 5px;
+        right: 5px;
+    }
+
+    @include s-mobile {
+        margin: 0;
+        padding: 0;
+        width: unset;
+        height: unset;
+        left: 3px;
+        top: 3px;
+        bottom: 3px;
+        right: 3px;
+    }
+
+    .chatFormWrap {
+        margin: 0 5%;
+        position: relative;
+        height: 535px;
+        overflow: scroll;
+        overflow-x: hidden;
+
+        @include chatHeight {
+            height: 410px;
+        }
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        label {
+            font-size: 18px;
+        }
+
+        input[type='text'] {
+            width: 100%;
+            outline: none;
+            height: 40px;
+            background-image: linear-gradient(to right top, #3b3939, #383535, #343131, #312d2d, #2e2929);
+            border: 1px solid rgb(107, 94, 94);
+            margin-bottom: 15px;
+            margin-top: 3px;
+            border-radius: 8px;
+            color: white;
+            font-size: 16px;
+            padding: 0 10px;
+        }
+
+        textarea {
+            outline: none;
+            width: 100%;
+            background-image: linear-gradient(to right top, #3b3939, #383535, #343131, #312d2d, #2e2929);
+            border: 1px solid rgb(107, 94, 94);
+            margin-bottom: 15px;
+            height: 285px;
+            margin-top: 3px;
+            border-radius: 8px;
+            color: white;
+            font-size: 16px;
+            padding: 5px 10px;
+            resize: none;
+
+            @include chatHeight {
+                height: 160px;
+            }
+        }
+
+        input[type='file'] {
+            margin-bottom: 15px;
+            margin-top: 3px;
+            font-size: 16px;
+        }
+
+
+
+    }
+
+    h1 {
+        // background-color: rgb(27, 165, 33);
+        background: linear-gradient(to left, #0e9414, #1f864a);
+        background: linear-gradient(65deg, #0275e1 0, #198ffd 100%);
+        text-align: center;
+        font-size: 22px;
+        height: 50px;
+        margin: 0;
+        padding: 0;
+        line-height: unset;
+        line-height: 50px;
+        margin-bottom: 15px;
+    }
+
+    .files-list {
+        ul {
+            li {
+                list-style-type: none;
+                text-align: center;
+
+                .files-list-item-preview-image {
+                    max-width: 300px;
+                    max-height: 200px;
+                    margin-left: 50%;
+                    transform: translateX(-50%);
+                }
+
+                .files-list-item-content {
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+
+
+
+}
+
+.files-dropzone-list {
+    border: 1px #198ffd dashed;
+    height: 50px !important;
+    width: 100%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    font-size: 18px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 15px;
+    color: #3aa0ff;
+    margin-top: 5px;
+    cursor: pointer;
+    margin-bottom: 15px;
+
+
+
+    &:hover {
+        border: 1px #198ffd dotted;
+    }
+}
+
+.files-dropzone-list .files-list-item-remove {
+    cursor: pointer;
+}
+
+.chatWrapper {
+    .buttonWrapper {
+        display: flex;
+        margin-left: 50%;
+        transform: translateX(-50%);
+        width: 350px;
+        justify-content: space-around;
+        position: absolute;
+        bottom: 30px;
+
+
+
+        button {
+            text-align: center;
+            background-image: linear-gradient(to right top, #3b3939, #383535, #343131, #312d2d, #2e2929);
+            border: 1px solid rgb(96, 107, 94);
+            color: white;
+            width: 150px;
+            height: 45px;
+            border-radius: 8px;
+            margin-top: 25px;
+            font-size: 18px;
+            outline: none;
+            margin-bottom: 10px;
+            cursor: pointer;
+
+
+            &:hover {
+                background-image: linear-gradient(to right top, #585757, #504b4b, #444040, #413939, #463d3d);
+                border: 1px dotted rgb(96, 107, 94);
+            }
+        }
+
+        button.cancel {
+            background-image: none;
+            background-color: transparent;
+        }
+    }
+}

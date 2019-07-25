@@ -1,0 +1,202 @@
+.chatForm {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  height: 700px;
+  width: 400px;
+  border-radius: 15px;
+  overflow: hidden;
+  color: white;
+  border: 1px solid #6b5e5e;
+  background-color: #1D2026;
+  z-index: 99;
+}
+
+@media (max-height: 750px) {
+  .chatForm {
+    height: 575px;
+  }
+}
+
+@media (max-height: 615px) {
+  .chatForm {
+    bottom: 5px;
+    right: 5px;
+  }
+}
+
+@media (max-width: 440px) {
+  .chatForm {
+    margin: 0;
+    padding: 0;
+    width: unset;
+    height: unset;
+    left: 3px;
+    top: 3px;
+    bottom: 3px;
+    right: 3px;
+  }
+}
+
+.chatForm .chatFormWrap {
+  margin: 0 5%;
+  position: relative;
+  height: 535px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+@media (max-height: 750px) {
+  .chatForm .chatFormWrap {
+    height: 410px;
+  }
+}
+
+.chatForm .chatFormWrap::-webkit-scrollbar {
+  display: none;
+}
+
+.chatForm .chatFormWrap label {
+  font-size: 18px;
+}
+
+.chatForm .chatFormWrap input[type='text'] {
+  width: 100%;
+  outline: none;
+  height: 40px;
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#3b3939), color-stop(#383535), color-stop(#343131), color-stop(#312d2d), to(#2e2929));
+  background-image: linear-gradient(to right top, #3b3939, #383535, #343131, #312d2d, #2e2929);
+  border: 1px solid #6b5e5e;
+  margin-bottom: 15px;
+  margin-top: 3px;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  padding: 0 10px;
+}
+
+.chatForm .chatFormWrap textarea {
+  outline: none;
+  width: 100%;
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#3b3939), color-stop(#383535), color-stop(#343131), color-stop(#312d2d), to(#2e2929));
+  background-image: linear-gradient(to right top, #3b3939, #383535, #343131, #312d2d, #2e2929);
+  border: 1px solid #6b5e5e;
+  margin-bottom: 15px;
+  height: 285px;
+  margin-top: 3px;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  padding: 5px 10px;
+  resize: none;
+}
+
+@media (max-height: 750px) {
+  .chatForm .chatFormWrap textarea {
+    height: 160px;
+  }
+}
+
+.chatForm .chatFormWrap input[type='file'] {
+  margin-bottom: 15px;
+  margin-top: 3px;
+  font-size: 16px;
+}
+
+.chatForm h1 {
+  background: -webkit-gradient(linear, right top, left top, from(#0e9414), to(#1f864a));
+  background: linear-gradient(to left, #0e9414, #1f864a);
+  background: linear-gradient(65deg, #0275e1 0, #198ffd 100%);
+  text-align: center;
+  font-size: 22px;
+  height: 50px;
+  margin: 0;
+  padding: 0;
+  line-height: unset;
+  line-height: 50px;
+  margin-bottom: 15px;
+}
+
+.chatForm .files-list ul li {
+  list-style-type: none;
+  text-align: center;
+}
+
+.chatForm .files-list ul li .files-list-item-preview-image {
+  max-width: 300px;
+  max-height: 200px;
+  margin-left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.chatForm .files-list ul li .files-list-item-content {
+  font-size: 13px;
+}
+
+.files-dropzone-list {
+  border: 1px #198ffd dashed;
+  height: 50px !important;
+  width: 100%;
+  margin-left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-size: 18px;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 15px;
+  color: #3aa0ff;
+  margin-top: 5px;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+.files-dropzone-list:hover {
+  border: 1px #198ffd dotted;
+}
+
+.files-dropzone-list .files-list-item-remove {
+  cursor: pointer;
+}
+
+.chatWrapper .buttonWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 350px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  position: absolute;
+  bottom: 30px;
+}
+
+.chatWrapper .buttonWrapper button {
+  text-align: center;
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#3b3939), color-stop(#383535), color-stop(#343131), color-stop(#312d2d), to(#2e2929));
+  background-image: linear-gradient(to right top, #3b3939, #383535, #343131, #312d2d, #2e2929);
+  border: 1px solid #606b5e;
+  color: white;
+  width: 150px;
+  height: 45px;
+  border-radius: 8px;
+  margin-top: 25px;
+  font-size: 18px;
+  outline: none;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.chatWrapper .buttonWrapper button:hover {
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#585757), color-stop(#504b4b), color-stop(#444040), color-stop(#413939), to(#463d3d));
+  background-image: linear-gradient(to right top, #585757, #504b4b, #444040, #413939, #463d3d);
+  border: 1px dotted #606b5e;
+}
+
+.chatWrapper .buttonWrapper button.cancel {
+  background-image: none;
+  background-color: transparent;
+}
+/*# sourceMappingURL=Chat.css.map */

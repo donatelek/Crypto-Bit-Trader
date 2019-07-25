@@ -1,0 +1,108 @@
+div.bitmexLivePrice {
+  position: absolute;
+  width: 200px;
+  left: 500px;
+  top: 150px;
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#3b3939), color-stop(#383535), color-stop(#343131), color-stop(#312d2d), to(#2e2929));
+  background-image: linear-gradient(to right top, #3b3939, #383535, #343131, #312d2d, #2e2929);
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid rgba(128, 128, 128, 0.596);
+}
+
+div.bitmexLivePrice .livePriceTitles ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+}
+
+div.bitmexLivePrice .livePriceTitles ul li {
+  font-size: 15px;
+  text-align: center;
+  width: 50%;
+  list-style-type: none;
+  color: white;
+}
+
+div.bitmexLivePrice .lastPrice {
+  text-align: center;
+  font-size: 22px;
+  color: #ffd562;
+}
+
+div.bitmexLivePrice ul {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+div.bitmexLivePrice ul:last-of-type {
+  margin-bottom: 0;
+}
+
+div.bitmexLivePrice ul li.ask {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: white;
+  border-bottom: 1px solid #6b5e5e;
+}
+
+div.bitmexLivePrice ul li.ask:nth-of-type(even) {
+  background-color: #464646;
+}
+
+div.bitmexLivePrice ul li.ask:first-of-type {
+  border-top: 1px solid #6b5e5e;
+}
+
+div.bitmexLivePrice ul li.ask .askPrice {
+  font-size: 15px;
+  margin-right: 10px;
+  width: 50%;
+  text-align: center;
+}
+
+div.bitmexLivePrice ul li.ask .askSize {
+  text-align: center;
+  width: 50%;
+  font-size: 14px;
+}
+
+div.bitmexLivePrice ul li.bid {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 1px solid #6b5e5e;
+  color: white;
+}
+
+div.bitmexLivePrice ul li.bid:nth-of-type(odd) {
+  background-color: #464646;
+}
+
+div.bitmexLivePrice ul li.bid:first-of-type {
+  border-top: 1px solid #6b5e5e;
+}
+
+div.bitmexLivePrice ul li.bid:last-of-type {
+  border-bottom: none;
+}
+
+div.bitmexLivePrice ul li.bid .bidPrice {
+  font-size: 15px;
+  margin-right: 10px;
+  width: 50%;
+  text-align: center;
+}
+
+div.bitmexLivePrice ul li.bid .bidSize {
+  text-align: center;
+  width: 50%;
+  font-size: 14px;
+}
+/*# sourceMappingURL=BitmexLivePrice.css.map */

@@ -1,68 +1,81 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# CRYPTO BIT-TRADER
+> All in one tool for cryptocurrency traders
 
-## Available Scripts
+## Table of contents
 
-In the project directory, you can run:
+* [Screenshots](#screenshots)
+* [Project Demo](#project-demo)
+* [Technologies](#technologies)
+* [Setup](#setup)
+* [Usage](#usage)
+* [To-do list](#to-do-list)
+* [Bug or Feature Request](#bug-or-feature-request)
+* [Status](#status)
+* [License](#license)
+* [Contact](#contact)
+* [Contribute](#contribute)
 
-### `npm start`
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Screenshots
 
-### `npm test`
+![Example screenshot](https://github.com/donatelek/Portfolio/blob/master/src/img/cryptotool.png)
+![Example screenshot](https://github.com/donatelek/Portfolio/blob/master/src/img/cryptotool.png)
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Project Demo
 
-### `npm run build`
+Demo will be available soon
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Technologies
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+* React - version 16.8
+* Redux - version 4.0
+* Node - version 12.4
+* Express - version 4.16
+* PostgreSQL - version 11
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Setup
 
-### `npm run eject`
+Clone this repo to your desktop and run `npm install` to install all the dependencies.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Usage
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+After you clone this repo to your desktop, go to its root directory and run `npm install` to install its dependencies.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Once the dependencies are installed, you can run  `npm start` to start the application. You will then be able to access it at localhost:3000
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Features
 
-## Learn More
+* Crypto Calculator - that fetch all cryptocurrency prices from coinpaprika
+* Bitmex Order Scaler - makes scaled orders for example you can separate 1 order to 10 smaller so that you can average that order.
+* Live price from Bitmex
+* Profit Calculator - Calculates how much will you earn or lose on trade.
+* Charts from TradingView
+* Bitmex Orderbook
+* Volume of longs and shorts in % on Bitmex
+* Technical Analysis for BTC from TradingView
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## To-do list
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* User profile and options
+* Programmable buttons in Crypto Calculator
+* Your current positions from Bitmex
+* & many more!
 
-### Code Splitting
+## Bug or Feature Request
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+If you find a bug, kindly open an issue [here](https://github.com/donatelek/Crypto-Bit-Trader/issues/new).
 
-### Analyzing the Bundle Size
+If you'd like to request a new function, feel free to do so by opening an issue [here](https://github.com/donatelek/Crypto-Bit-Trader/issues/new).
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+## Status
+Project is: _in progress_.
 
-### Making a Progressive Web App
+## License
+This project is licensed under the MIT License.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+## Contribute
+If You want to contribute feel free to contact me [HERE](https://jakub-sznajder.herokuapp.com/).
 
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Contact
+Created by [@donatelek](https://jakub-sznajder.herokuapp.com/).

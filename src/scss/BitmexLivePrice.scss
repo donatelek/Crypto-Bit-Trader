@@ -1,0 +1,107 @@
+div.bitmexLivePrice {
+    position: absolute;
+    width: 200px;
+    left: 500px;
+    top: 150px;
+    background-image: linear-gradient(to right top, #3b3939, #383535, #343131, #312d2d, #2e2929);
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid rgba(128, 128, 128, 0.596);
+
+    .livePriceTitles {
+        ul {
+            display: flex;
+            padding: 0;
+
+            li {
+                font-size: 15px;
+                text-align: center;
+                width: 50%;
+                list-style-type: none;
+                color: white;
+            }
+        }
+    }
+
+    .lastPrice {
+        text-align: center;
+        font-size: 22px;
+        color: rgb(255, 213, 98);
+    }
+
+    ul {
+        padding: 0;
+        margin: 0;
+        margin-bottom: 10px;
+        margin-top: 10px;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+
+        li.ask {
+            list-style-type: none;
+            display: flex;
+            color: rgb(255, 255, 255);
+            border-bottom: 1px solid rgb(107, 94, 94);
+            // border: 1px solid grey;
+
+            &:nth-of-type(even) {
+                background-color: rgb(70, 70, 70);
+            }
+
+            &:first-of-type {
+                border-top: 1px solid rgb(107, 94, 94);
+            }
+
+
+
+            .askPrice {
+                font-size: 15px;
+                margin-right: 10px;
+                width: 50%;
+                text-align: center;
+            }
+
+            .askSize {
+                text-align: center;
+                width: 50%;
+                font-size: 14px;
+            }
+
+        }
+
+        li.bid {
+            list-style-type: none;
+            display: flex;
+            border-bottom: 1px solid rgb(107, 94, 94);
+            color: white;
+
+            &:nth-of-type(odd) {
+                background-color: rgb(70, 70, 70);
+            }
+
+            &:first-of-type {
+                border-top: 1px solid rgb(107, 94, 94);
+            }
+
+            &:last-of-type {
+                border-bottom: none;
+            }
+
+            .bidPrice {
+                font-size: 15px;
+                margin-right: 10px;
+                width: 50%;
+                text-align: center;
+            }
+
+            .bidSize {
+                text-align: center;
+                width: 50%;
+                font-size: 14px;
+            }
+
+        }
+    }
+}

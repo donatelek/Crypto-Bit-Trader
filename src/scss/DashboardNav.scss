@@ -1,0 +1,58 @@
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+div.dashboardNav {
+    position: relative;
+    user-select: none;
+    top: 0;
+    left: 0;
+    border-bottom: 1px solid rgba(129, 129, 129, 0.561);
+    // background-color: red;
+    width: 100vw;
+    height: 50px;
+    border-top: 1px solid rgba(93, 93, 93, 0.452);
+
+    .lockDrag {
+        position: absolute;
+        top: 9px;
+        font-size: 20px;
+        left: 140px;
+        display: flex;
+        width: 150px;
+        height: 30px;
+
+        i {
+            cursor: pointer;
+            line-height: 30px;
+        }
+
+        div {
+            margin-right: 10px;
+            cursor: pointer;
+            font-size: 13px;
+        }
+    }
+}
+
+div.userInformation {
+    position: absolute;
+    right: 140px;
+    top: 8px;
+    font-size: 16px;
+}
+
+
+
+.marketDataWidget {
+    height: 490px;
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+
+    iframe {
+        width: 780px;
+        height: 460px;
+        margin-top: 30px;
+    }
+}

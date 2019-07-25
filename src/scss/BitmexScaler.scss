@@ -1,0 +1,277 @@
+.scalerWrapper {
+    width: 800px;
+}
+
+.bitmexScaler {
+    width: 800px;
+    position: absolute;
+}
+
+.scalerAuthentication {
+    width: 800px;
+    margin-top: 50px;
+    background-image: linear-gradient(to right top, #3b3939, #383535, #343131, #312d2d, #2e2929);
+    border: 1px solid rgb(107, 94, 94);
+    padding: 25px 0 0 0;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+
+    .note {
+        font-size: 19px;
+    }
+
+    .bitmexLinks {
+        li {
+            font-size: 17px;
+            list-style-type: none;
+        }
+    }
+
+    ul.platform {
+        text-align: center;
+        display: flex;
+        width: 250px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 0;
+        padding: 0;
+        margin-bottom: 15px;
+
+        li {
+            width: 50%;
+            list-style-type: none;
+
+            label {
+                margin: 10px;
+            }
+        }
+    }
+
+    .authWrapper {
+        input {
+            margin-bottom: 10px;
+            height: 35px;
+            font-size: 15px;
+            width: 350px;
+            background-image: linear-gradient(to right top, #3b3939, #383535, #343131, #312d2d, #2e2929);
+            border: 1px solid rgb(107, 94, 94);
+            color: white;
+        }
+    }
+
+    .nextButton {
+        background-image: linear-gradient(to right top, #3b3939, #383535, #343131, #312d2d, #2e2929);
+        border: 1px solid rgb(107, 94, 94);
+        color: white;
+        width: 250px;
+        height: 40px;
+        margin-bottom: 15px;
+        margin-top: 15px;
+    }
+}
+
+.scalerInterface {
+    overflow: scroll;
+    overflow-x: hidden;
+    max-height: 700px;
+    width: 800px;
+    margin-top: 50px;
+    // margin-left: 50px;
+    background-image: linear-gradient(to right top, #3b3939, #383535, #343131, #312d2d, #2e2929);
+    border: 1px solid rgb(107, 94, 94);
+    padding: 25px 0;
+    color: white;
+    border-radius: 10px;
+
+    .serverResponse {
+        color: rgb(243, 51, 51);
+        margin-top: 20px;
+        font-size: 15px;
+        text-align: center;
+    }
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    .leverage {
+        margin-top: -1px;
+
+        label {
+            text-align: center;
+        }
+
+        input {
+            width: 200px;
+            height: 31px;
+            font-size: 15px;
+            color: white;
+            text-align: center;
+            background-image: linear-gradient(to right top, #3b3939, #383535, #343131, #312d2d, #2e2929);
+            border: 1px solid rgb(107, 94, 94);
+        }
+    }
+
+    .sideInstrumentWrapper {
+        // background-color: red;
+        display: flex;
+        text-align: center;
+
+        .instrument {
+            width: 50%;
+
+            select {
+                width: 200px;
+                // text-align: center;
+                // text-align-last: center;
+                background-image: linear-gradient(to right top, #3b3939, #383535, #343131, #312d2d, #2e2929);
+                border: 1px solid rgb(107, 94, 94);
+                color: white;
+
+                option {
+                    color: black;
+                }
+            }
+        }
+
+        .side {
+            width: 50%;
+            height: 80px;
+
+            ul {
+                margin-left: 50%;
+                margin-top: 28px;
+                transform: translateX(-50%);
+                display: flex;
+                width: 230px;
+                justify-content: space-between;
+
+                li {
+
+                    list-style-type: none;
+
+                    label {
+                        padding: 0 10px;
+                    }
+                }
+            }
+        }
+    }
+
+    // display: flex;
+    .inputsWrapper {
+        text-align: center;
+        display: flex;
+        justify-content: space-around;
+        position: relative;
+
+        div {
+
+            position: relative;
+        }
+
+        label {
+            // background-color: yellow;
+            font-size: 15px;
+            text-align: center;
+            // margin-left: 50%;
+
+        }
+
+        input {
+            width: 130px;
+            font-size: 15px;
+            height: 30px;
+            color: white;
+            text-align: center;
+            background-image: linear-gradient(to right top, #3b3939, #383535, #343131, #312d2d, #2e2929);
+            border: 1px solid rgb(107, 94, 94);
+        }
+    }
+
+
+
+    .buttonWrapper {
+        // background-color: yellow;
+        width: 400px;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        left: 50%;
+        transform: translateX(-50%);
+
+    }
+
+    button.previewButton {
+        width: 40%;
+        height: 40px;
+        outline: none;
+        background-image: linear-gradient(to right top, #3b3939, #383535, #343131, #312d2d, #2e2929);
+        border: 1px solid rgb(107, 94, 94);
+        color: white;
+    }
+
+    button.submitButton {
+        width: 40%;
+        height: 40px;
+        outline: none;
+        border: 1px solid rgb(107, 94, 94);
+        background-image: linear-gradient(to right top, #3b3939, #383535, #343131, #312d2d, #2e2929);
+        color: white;
+    }
+}
+
+div.preview {
+
+    .previewTitlesWrapper {
+        display: flex;
+        position: relative;
+
+        .coin {
+            margin-left: 40px;
+        }
+
+        .amount {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .price {
+            position: absolute;
+            right: 20px;
+        }
+    }
+
+    ul {
+        position: relative;
+        // height: 100%;
+
+        li {
+            display: flex;
+
+            .amountPreview {
+                left: 50%;
+                transform: translateX(-50%);
+                position: absolute;
+                // transform: translateX(-40%);
+            }
+
+            .pricePreview {
+                position: absolute;
+                right: 20px;
+                text-align: center;
+                // background-color: red;
+                // width: 150px;
+            }
+        }
+    }
+}

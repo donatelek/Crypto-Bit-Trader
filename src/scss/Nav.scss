@@ -1,0 +1,113 @@
+@mixin s-desktop {
+    @media (max-width: 1150px) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: 640px) {
+        @content;
+    }
+}
+
+// 550
+div.navigation {
+    position: absolute;
+    width: 1128px;
+    padding-left: 24px;
+    padding-right: 24px;
+    // width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0 auto;
+    height: 100px;
+    z-index: 99;
+
+    @include s-desktop {
+        width: 100%;
+    }
+
+    .mobileNav {
+        position: absolute;
+        right: 0;
+        top: 0;
+        left: 0;
+        height: 70px;
+        display: flex;
+        justify-content: flex-end;
+        border-bottom: 1px solid grey;
+        background-color: rgb(42, 42, 42);
+
+        li {
+            list-style-type: none;
+            margin-right: 60px;
+            margin-top: 20px;
+
+            &:first-of-type {
+                margin-right: 20px;
+            }
+
+            a {
+                text-decoration: none;
+                color: white;
+            }
+        }
+
+    }
+
+    ul {
+        display: flex;
+        margin-top: 20px;
+        justify-content: flex-end;
+
+
+        li {
+
+            margin-right: 30px;
+            text-decoration: none;
+            list-style-type: none;
+            font-size: 18px !important;
+            padding: 5px 15px;
+            cursor: pointer;
+
+            @include mobile {
+                margin-right: 10px;
+                padding: 5px 5px;
+            }
+
+            .navRegister {
+                color: rgb(255, 255, 255);
+                padding: 8px 25px;
+                background: linear-gradient(65deg, #0270D7 0, #0F8AFD 100%);
+            }
+
+            a {
+                text-decoration: none;
+                list-style-type: none;
+                letter-spacing: 0.5px;
+                color: rgb(255, 255, 255) !important;
+
+
+            }
+        }
+
+        li:last-of-type {
+            text-decoration: none;
+            list-style-type: none;
+            margin-right: 0px;
+
+            // border: 1px solid rgb(226, 226, 226);
+            @include mobile {
+                margin-right: 0px;
+            }
+        }
+    }
+}
+
+.headerLogo {
+    // width: 20px;
+    position: absolute;
+    height: 35px;
+    // background-color: red;
+    z-index: 99;
+}
