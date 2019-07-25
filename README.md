@@ -1,5 +1,5 @@
 # CRYPTO BIT-TRADER
-> All in one tool for cryptocurrency traders
+> All in one tool for cryptocurrency margin traders.
 
 ## Table of contents
 
@@ -8,6 +8,7 @@
 * [Technologies](#technologies)
 * [Setup](#setup)
 * [Usage](#usage)
+* [Features](#features)
 * [To-do list](#to-do-list)
 * [Bug or Feature Request](#bug-or-feature-request)
 * [Status](#status)
@@ -48,13 +49,13 @@ Once the dependencies are installed, you can run  `npm start` to start the appli
 
 ## Features
 
-* Crypto Calculator - that fetch all cryptocurrency prices from coinpaprika
-* Bitmex Order Scaler - makes scaled orders for example you can separate 1 order to 10 smaller so that you can average that order.
-* Live price from Bitmex
+* Crypto Calculator - fetches all cryptocurrency prices from coinpaprika
+* Bitmex Order Scaler - makes scaled orders for example you can separate 1 order to 10 smaller so that you can average entry price.
 * Profit Calculator - Calculates how much will you earn or lose on trade.
-* Charts from TradingView
+* Live price from Bitmex
 * Bitmex Orderbook
-* Volume of longs and shorts in % on Bitmex
+* Charts from TradingView
+* Volume of longs and shorts on Bitmex
 * Technical Analysis for BTC from TradingView
 
 ## To-do list
