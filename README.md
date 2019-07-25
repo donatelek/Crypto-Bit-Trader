@@ -19,8 +19,10 @@
 
 ## Screenshots
 
-![Example screenshot](https://github.com/donatelek/Portfolio/blob/master/src/img/cryptotool.png)
-![Example screenshot](https://github.com/donatelek/Portfolio/blob/master/src/img/cryptotool.png)
+![Example screenshot](https://github.com/donatelek/Crypto-Bit-Trader/blob/master/src/images/screenshot2.png)
+
+
+![Example screenshot](https://github.com/donatelek/Crypto-Bit-Trader/blob/master/src/images/screenshot.png)
 
 ## Project Demo
 
