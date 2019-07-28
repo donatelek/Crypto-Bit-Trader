@@ -11,7 +11,7 @@ class BitmexLivePrice extends Component {
     }
 
     componentDidMount() {
-        const socket = new WebSocket('ws://crypto-bit-trader-live-price.herokuapp.com/');
+        const socket = new WebSocket('wss://crypto-bit-trader-live-price.herokuapp.com/');
 
         socket.onopen = function () {
             console.log('Opened connection to Bitmex Live Price Websocket 🎉');
