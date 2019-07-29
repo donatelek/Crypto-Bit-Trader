@@ -85,6 +85,14 @@
     color: white;
     border-radius: 10px;
 
+    .backButton {
+        position: absolute;
+        bottom: 28px;
+        left: 20px;
+        font-size: 15px;
+        cursor: pointer;
+    }
+
     .serverResponse {
         color: rgb(243, 51, 51);
         margin-top: 20px;

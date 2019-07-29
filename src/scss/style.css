@@ -2407,6 +2407,14 @@ div.bitmexLivePrice ul li.bid .bidSize {
   border-radius: 10px;
 }
 
+.scalerInterface .backButton {
+  position: absolute;
+  bottom: 28px;
+  left: 20px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
 .scalerInterface .serverResponse {
   color: #f33333;
   margin-top: 20px;

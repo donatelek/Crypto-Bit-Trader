@@ -1,20 +1,22 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import * as actionTypes from '../store/actions'
+
 class ScalerInterface extends Component {
     state = {
         symbol: 'XBTUSD',
-        orderQty: 1,
+        orderQty: 100,
         price: 595,
         ordType: 'Limit',
         side: 'Buy',
         short: false,
         long: true,
-        lowestPrice: '',
-        highestPrice: '',
-        split: '',
+        lowestPrice: 1000,
+        highestPrice: 2000,
+        split: 10,
         preview: '',
         ordersPerTrade: '',
-        leverage: '',
+        leverage: 100,
         backedError: '',
         errorMessage: ''
     }
@@ -75,43 +77,49 @@ class ScalerInterface extends Component {
         const start = Number(this.state.lowestPrice)
         const split = Number(this.state.split)
         const prices = []
-        let error = false
+        let errors = {
+            rangePrice: false,
+            split: false,
+            orderQty: false,
+            leverage: false
+        }
         if (end < 1 || !end || start >= end) {
             document.getElementById('highestPriceInput').style.borderColor = 'red';
-            error = true
+            errors.rangePrice = true
         } else {
             document.getElementById('highestPriceInput').style.borderColor = 'rgb(107, 94, 94)';
-            error = false
+            errors.rangePrice = false
         }
         if (start < 1 || !start || end <= start) {
             document.getElementById('lowestPriceInput').style.borderColor = 'red';
-            error = true
+            errors.rangePrice = true
         } else {
             document.getElementById('lowestPriceInput').style.borderColor = 'rgb(107, 94, 94)';
-            error = false
+            errors.rangePrice = false
         }
         if (split < 1 || !split || split > this.state.orderQty) {
             document.getElementById('splitInput').style.borderColor = 'red';
-            error = true
+            errors.split = true
         } else {
             document.getElementById('splitInput').style.borderColor = 'rgb(107, 94, 94)';
-            error = false
+            errors.split = false
         }
         if (this.state.orderQty < 1 || !this.state.orderQty || split > this.state.orderQty) {
             document.getElementById('quantityInput').style.borderColor = 'red';
-            error = true
+            errors.orderQty = true
         } else {
             document.getElementById('quantityInput').style.borderColor = 'rgb(107, 94, 94)';
-            error = false
+            errors.orderQty = false
         }
         if (this.state.leverage < 0 || this.state.leverage > 100 || !this.state.leverage) {
             document.getElementById('leverageInput').style.borderColor = 'red';
-            error = true
+            errors.leverage = true
         } else {
             document.getElementById('leverageInput').style.borderColor = 'rgb(107, 94, 94)';
-            error = false
+            errors.leverage = false
         }
-        if (error === true) {
+        if (errors.orderQty || errors.rangePrice || errors.split || errors.leverage) {
+            console.log(errors)
             return
         }
         const dprice = (end - start) / (split - 1)
@@ -220,6 +228,7 @@ class ScalerInterface extends Component {
             error = false
         }
         if (error === true) {
+            console.log(error)
             return
         }
         const dprice = (end - start) / (split - 1)
@@ -249,6 +258,9 @@ class ScalerInterface extends Component {
             preview,
             ordersPerTrade
         })
+    }
+    handleExitInterface = () => {
+        this.props.handleSaveApi('', '')
     }
     render() {
         return (
@@ -334,6 +346,7 @@ class ScalerInterface extends Component {
                     <button onClick={this.handlePreview} className='previewButton'>Preview</button>
                     <button onClick={this.handleSubmitOrder} className='submitButton'>Submit</button>
                 </div>
+                <div className="backButton" onClick={this.handleExitInterface} >Back</div>
             </div>
         );
     }
@@ -345,5 +358,9 @@ const mapStateToProps = state => {
         apiSecret: state.apiSecret,
     }
 }
-
-export default connect(mapStateToProps)(ScalerInterface);
+const mapDispatchToProps = dispatch => {
+    return {
+        handleSaveApi: (apiKey, apiSecret) => dispatch({ type: actionTypes.SAVE_API, apiKey, apiSecret })
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(ScalerInterface);

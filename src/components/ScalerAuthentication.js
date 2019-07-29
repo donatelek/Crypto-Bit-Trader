@@ -63,7 +63,7 @@ class ScalerAuthentication extends Component {
                 <ul className='bitmexLinks'>
                     <li>For Official: <a href="https://www.bitmex.com/app/apiKeys">https://www.bitmex.com/app/apiKeys</a> </li>
                     <li>For Testnet: <a href="https://testnet.bitmex.com/app/apiKeys">https://testnet.bitmex.com/app/apiKeys</a> </li>
-                    <li>To check functionality go <a href="/">HERE</a> for demo API keys</li>
+                    <li>To check functionality go <a href="https://github.com/donatelek/Crypto-Bit-Trader">HERE</a> for demo API keys</li>
                 </ul>
             </div>
         );
