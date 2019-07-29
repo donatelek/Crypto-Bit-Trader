@@ -30,14 +30,14 @@
 https://crypto-bit-trader.herokuapp.com/
 
 Bitmex Scaler Test credentials
-TESTNET
-API KEY - X1hYiCgj9rsuQfXFzzIJBvi9
-API SECRET - tmPwzXBBxAFJp9eyMseYtg6NuMsHybpJzpu5qHPxHmH5dqXD
+* TESTNET
+* API KEY - X1hYiCgj9rsuQfXFzzIJBvi9
+* API SECRET - tmPwzXBBxAFJp9eyMseYtg6NuMsHybpJzpu5qHPxHmH5dqXD
 
 Bitmex account to check if it works
-https://testnet.bitmex.com/
-Email - cryptobittrader@wp.pl
-Password - cryptobittrader
+* https://testnet.bitmex.com/
+* Email - cryptobittrader@wp.pl
+* Password - cryptobittrader
 
 ## Technologies
 
