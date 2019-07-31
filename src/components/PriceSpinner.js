@@ -13,7 +13,6 @@ class PriceSpinner extends Component {
                             <span>-</span>
                             <div className="price">{this.props.coins[0].quotes.USD.price.toFixed()}$</div>
                         </li>
-
                         <li>
                             <h1>{this.props.coins[1].name.replace(/\s/g, '')}</h1>
                             <h3>({this.props.coins[1].symbol})</h3>

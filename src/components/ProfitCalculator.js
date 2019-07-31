@@ -132,7 +132,6 @@ class ProfitCalculator extends Component {
         }
     }
     render() {
-
         return (
             <div className='profitCalculator'>
                 <ul className='currency'>

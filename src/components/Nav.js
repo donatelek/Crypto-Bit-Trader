@@ -7,11 +7,6 @@ class Nav extends Component {
     return (
       <>
         <div class="navigation">
-          {/* <div className="navHamburger"><i class="fas fa-bars"></i></div>
-              <div className="mobileNav">
-              <li class="nav-item" ><Link to='/login'>Login</Link></li>
-              <li class="nav-item" ><Link to='/register' className='navRegister'>Register</Link></li>
-              </div> */}
           <ul class="nav">
             <li class="nav-item" ><Link to='/login'>Login</Link></li>
             <li class="nav-item" ><Link to='/register' className='navRegister'>Register</Link></li>

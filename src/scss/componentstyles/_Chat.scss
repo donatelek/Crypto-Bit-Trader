@@ -22,7 +22,6 @@
     right: 30px;
     bottom: 30px;
     height: 700px;
-    // height: 1400px;
     width: 400px;
     border-radius: 15px;
     overflow: hidden;
@@ -108,13 +107,9 @@
             margin-top: 3px;
             font-size: 16px;
         }
-
-
-
     }
 
     h1 {
-        // background-color: rgb(27, 165, 33);
         background: linear-gradient(to left, #0e9414, #1f864a);
         background: linear-gradient(65deg, #0275e1 0, #198ffd 100%);
         text-align: center;
@@ -166,8 +161,6 @@
     cursor: pointer;
     margin-bottom: 15px;
 
-
-
     &:hover {
         border: 1px #198ffd dotted;
     }
@@ -187,8 +180,6 @@
         position: absolute;
         bottom: 30px;
 
-
-
         button {
             text-align: center;
             background-image: linear-gradient(to right top, #3b3939, #383535, #343131, #312d2d, #2e2929);
@@ -202,7 +193,6 @@
             outline: none;
             margin-bottom: 10px;
             cursor: pointer;
-
 
             &:hover {
                 background-image: linear-gradient(to right top, #585757, #504b4b, #444040, #413939, #463d3d);
