@@ -16,6 +16,7 @@
     color: white;
     border-radius: 10px;
     text-align: center;
+    user-select: none;
 
     .note {
         font-size: 19px;
@@ -54,9 +55,11 @@
             margin-bottom: 10px;
             height: 35px;
             font-size: 15px;
-            width: 350px;
+            width: 450px;
             background-image: linear-gradient(to right top, #3b3939, #383535, #343131, #312d2d, #2e2929);
             border: 1px solid rgb(107, 94, 94);
+            padding: 0 5px;
+            margin-top: 5px;
             color: white;
         }
     }
@@ -78,7 +81,6 @@
     max-height: 700px;
     width: 800px;
     margin-top: 50px;
-    // margin-left: 50px;
     background-image: linear-gradient(to right top, #3b3939, #383535, #343131, #312d2d, #2e2929);
     border: 1px solid rgb(107, 94, 94);
     padding: 25px 0;
@@ -129,7 +131,6 @@
     }
 
     .sideInstrumentWrapper {
-        // background-color: red;
         display: flex;
         text-align: center;
 
@@ -138,8 +139,6 @@
 
             select {
                 width: 200px;
-                // text-align: center;
-                // text-align-last: center;
                 background-image: linear-gradient(to right top, #3b3939, #383535, #343131, #312d2d, #2e2929);
                 border: 1px solid rgb(107, 94, 94);
                 color: white;
@@ -163,7 +162,6 @@
                 justify-content: space-between;
 
                 li {
-
                     list-style-type: none;
 
                     label {
@@ -174,7 +172,6 @@
         }
     }
 
-    // display: flex;
     .inputsWrapper {
         text-align: center;
         display: flex;
@@ -187,11 +184,8 @@
         }
 
         label {
-            // background-color: yellow;
             font-size: 15px;
             text-align: center;
-            // margin-left: 50%;
-
         }
 
         input {
@@ -208,14 +202,12 @@
 
 
     .buttonWrapper {
-        // background-color: yellow;
         width: 400px;
         position: relative;
         display: flex;
         justify-content: space-between;
         left: 50%;
         transform: translateX(-50%);
-
     }
 
     button.previewButton {
@@ -238,7 +230,6 @@
 }
 
 div.preview {
-
     .previewTitlesWrapper {
         display: flex;
         position: relative;
@@ -261,7 +252,6 @@ div.preview {
 
     ul {
         position: relative;
-        // height: 100%;
 
         li {
             display: flex;
@@ -270,15 +260,12 @@ div.preview {
                 left: 50%;
                 transform: translateX(-50%);
                 position: absolute;
-                // transform: translateX(-40%);
             }
 
             .pricePreview {
                 position: absolute;
                 right: 20px;
                 text-align: center;
-                // background-color: red;
-                // width: 150px;
             }
         }
     }

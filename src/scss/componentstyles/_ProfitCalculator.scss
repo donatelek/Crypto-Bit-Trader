@@ -1,10 +1,8 @@
 div.profitCalculator {
-    // background-color: red;
     position: absolute;
     width: 200px;
     height: 750px;
-    // left: 50%;
-    // transform: translateX(-50%);
+    user-select: none;
     text-align: center;
     border: 1px solid rgba(105, 105, 105, 0.65);
     background-image: linear-gradient(to right top, #000000, #100f0f, #1a1818, #242021, #2e2929);
@@ -26,7 +24,6 @@ div.profitCalculator {
             padding: 0;
             cursor: pointer;
             font-size: 16px;
-
         }
     }
 
@@ -48,8 +45,6 @@ div.profitCalculator {
     }
 
     ul.results {
-
-        // background-color: grey;
         margin: 0;
         padding: 0;
         width: 150px;
@@ -61,8 +56,6 @@ div.profitCalculator {
             margin: 0;
             padding: 0;
             width: 150px;
-            // margin-right: 50%;
-            // transform: translateX(50%);
             font-size: 15px;
             line-height: inherit;
             list-style-type: none;
@@ -72,16 +65,12 @@ div.profitCalculator {
 
             }
         }
-
-
     }
 
     div.calculatorInputs {
         div {
-            // background-color: pink;
             margin: 0;
             padding: 0;
-
 
             input::-webkit-outer-spin-button,
             input::-webkit-inner-spin-button {
@@ -104,7 +93,6 @@ div.profitCalculator {
                 margin: 0;
                 padding: 0;
                 line-height: unset;
-                // line-height: 25px;
                 margin-top: 5px;
             }
         }

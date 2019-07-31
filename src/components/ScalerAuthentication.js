@@ -52,11 +52,11 @@ class ScalerAuthentication extends Component {
                 <div className="authWrapper">
                     <label>Api key</label>
                     <br />
-                    <input type="text" name='apiKey' id='apiKeyInput' onChange={this.handleApiChange} value={this.state.apiKey} />
+                    <input type="text" name='apiKey' id='apiKeyInput' spellcheck='false' onChange={this.handleApiChange} value={this.state.apiKey} />
                     <br />
                     <label htmlFor="">Api Secret</label>
                     <br />
-                    <input type="text" name='apiSecret' id='apiSecretInput' onChange={this.handleApiChange} value={this.state.apiSecret} />
+                    <input type="text" name='apiSecret' id='apiSecretInput' spellcheck='false' onChange={this.handleApiChange} value={this.state.apiSecret} />
                 </div>
                 <button className='nextButton' onClick={this.handleNextButton}>Next ></button>
                 <div className="note">To get your api go here:</div>

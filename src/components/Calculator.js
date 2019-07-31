@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import CoinpaprikaAPI from '@coinpaprika/api-nodejs-client';
 import { connect } from 'react-redux'
 
 class Calculator extends Component {
@@ -9,18 +8,6 @@ class Calculator extends Component {
         coinSearchInput: '',
         showHamburger: false
     }
-
-    componentDidMount() {
-        // const client = new CoinpaprikaAPI();
-
-        // client.getTicker().then((data)=>{
-        //     console.log(data)
-        //     this.setState({
-        //         coinsApi:data
-        //     })
-        // }).catch(console.error)
-    }
-
     handleButtonClick = e => {
         const text = e.target.outerText
         const checkForRepeats = symbol => {
@@ -135,7 +122,6 @@ class Calculator extends Component {
         })
     }
     handleSearchCoins = (e) => {
-
         const value = e.target.value.toUpperCase()
         const mainArray = []
         this.props.allCoins.forEach((coin, index) => {

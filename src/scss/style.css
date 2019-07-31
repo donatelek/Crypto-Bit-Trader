@@ -253,14 +253,12 @@ html {
 *,
 *:before,
 *:after {
-  /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
   -webkit-box-sizing: inherit;
           box-sizing: inherit;
 }
 
 body {
   background: #1D2026;
-  /* Fallback for when there is no custom background color defined. */
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 }
@@ -274,7 +272,8 @@ hr {
   margin-bottom: 24px;
 }
 
-ul, ol {
+ul,
+ol {
   margin-top: 0;
   margin-bottom: 24px;
   padding-left: 24px;
@@ -309,15 +308,12 @@ dd {
 
 img {
   height: auto;
-  /* Make sure images are scaled correctly. */
   max-width: 100%;
-  /* Adhere to container width. */
   vertical-align: middle;
 }
 
 figure {
   margin: 24px 0;
-  /* Extra wide images within figure tags don't overflow the content area. */
 }
 
 figcaption {
@@ -1113,7 +1109,6 @@ label {
   padding-left: 64px;
 }
 
-/* Reveal animations */
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
@@ -2219,6 +2214,10 @@ div.bitmexLivePrice {
   border-radius: 15px;
   overflow: hidden;
   border: 1px solid rgba(128, 128, 128, 0.596);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 div.bitmexLivePrice .livePriceTitles ul {
@@ -2336,6 +2335,10 @@ div.bitmexLivePrice ul li.bid .bidSize {
   color: white;
   border-radius: 10px;
   text-align: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .scalerAuthentication .note {
@@ -2375,10 +2378,12 @@ div.bitmexLivePrice ul li.bid .bidSize {
   margin-bottom: 10px;
   height: 35px;
   font-size: 15px;
-  width: 350px;
+  width: 450px;
   background-image: -webkit-gradient(linear, left bottom, right top, from(#3b3939), color-stop(#383535), color-stop(#343131), color-stop(#312d2d), to(#2e2929));
   background-image: linear-gradient(to right top, #3b3939, #383535, #343131, #312d2d, #2e2929);
   border: 1px solid #6b5e5e;
+  padding: 0 5px;
+  margin-top: 5px;
   color: white;
 }
 
@@ -2707,7 +2712,6 @@ div.calculator input {
 
 div.calculator .buttonsWrapper {
   height: 73%;
-  background-color: green;
 }
 
 div.calculator .buttonsWrapper button {
@@ -2945,6 +2949,13 @@ div.dashboardNav {
   border-top: 1px solid rgba(93, 93, 93, 0.452);
 }
 
+div.dashboardNav .noteDragging {
+  font-size: 14px;
+  position: absolute;
+  top: 9px;
+  left: 300px;
+}
+
 div.dashboardNav .lockDrag {
   position: absolute;
   top: 9px;
@@ -2985,6 +2996,14 @@ div.userInformation {
   width: 780px;
   height: 460px;
   margin-top: 30px;
+}
+
+.version {
+  position: absolute;
+  opacity: 0.5;
+  bottom: 0;
+  left: 10px;
+  font-size: 13px;
 }
 
 .dropbtn {
@@ -3055,13 +3074,6 @@ div.userInformation {
   background-color: #3ca5d6;
 }
 
-body {
-  background: white !important;
-  overflow-x: inherit;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
 div.login {
   max-width: 550px;
   width: 100%;
@@ -3071,6 +3083,26 @@ div.login {
   margin-bottom: 100px;
   height: 650px;
   text-align: center;
+  -webkit-animation: fade1 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+          animation: fade1 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@-webkit-keyframes fade1 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade1 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @media (max-width: 640px) {
@@ -3228,10 +3260,14 @@ div.login form button {
   border: none;
   color: white;
   cursor: pointer;
+  -webkit-transition: background .4s ease-out;
+  transition: background .4s ease-out;
+  background-size: 1px 200px;
 }
 
 div.login form button:hover {
   background: linear-gradient(65deg, #0F8AFD, #60a3e2 100%);
+  background-position: 400px;
 }
 
 @media (max-width: 470px) {
@@ -3476,6 +3512,10 @@ div.profitCalculator {
   position: absolute;
   width: 200px;
   height: 750px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   text-align: center;
   border: 1px solid rgba(105, 105, 105, 0.65);
   background-image: -webkit-gradient(linear, left bottom, right top, from(#000000), color-stop(#100f0f), color-stop(#1a1818), color-stop(#242021), to(#2e2929));
@@ -3577,20 +3617,6 @@ div.profitCalculator div.calculatorInputs div h1 {
   margin-top: 5px;
 }
 
-body {
-  background: linear-gradient(80deg, rgba(36, 40, 48, 0.5) 0%, rgba(36, 40, 48, 0) 100%);
-  background: #1D2026;
-  background: -webkit-gradient(linear, left bottom, left top, from(#232526), to(#414345));
-  background: linear-gradient(to top, #232526, #414345);
-  background: #1D2026;
-  background: white;
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  overflow-x: hidden;
-  z-index: 99999999;
-}
-
 div.register {
   max-width: 600px;
   width: 100%;
@@ -3600,7 +3626,17 @@ div.register {
   height: 750px;
   overflow: hidden;
   text-align: center;
-  z-index: 9999999999999999999999 !important;
+  -webkit-animation: fade1 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+          animation: fade1 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes fade1 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @media (max-width: 640px) {
@@ -3775,10 +3811,14 @@ div.register form button {
   outline: none;
   background: linear-gradient(65deg, #60a3e2 0, #0F8AFD 100%);
   cursor: pointer;
+  -webkit-transition: background .4s ease-out;
+  transition: background .4s ease-out;
+  background-size: 1px 200px;
 }
 
 div.register form button:hover {
   background: linear-gradient(65deg, #0F8AFD, #60a3e2 100%);
+  background-position: 400px;
 }
 
 @media (max-width: 470px) {
@@ -3818,10 +3858,6 @@ div.register form div.terms a {
 
 .header-logo img {
   width: 50px;
-}
-
-footer .footer-brand img {
-  width: 40px !important;
 }
 
 footer {
@@ -3903,6 +3939,10 @@ footer .footer-copyright {
   top: 50px;
   color: white;
   left: 50%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
 }
@@ -4110,10 +4150,6 @@ div.loader {
   top: -2px;
   margin-top: 10px;
   margin-left: 20px;
-}
-
-.userOptions button:hover ul.options {
-  background-color: green !important;
 }
 
 .userOptions button {

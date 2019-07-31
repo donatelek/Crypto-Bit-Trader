@@ -6,13 +6,10 @@ class BitmexLivePrice extends Component {
         lastPrice: '',
         asks: '',
         bids: '',
-        // livePriceInterval: '',
-        // orderBookInterval: ''
     }
 
     componentDidMount() {
         const socket = new WebSocket('wss://crypto-bit-trader-live-price.herokuapp.com/');
-
         socket.onopen = function () {
             console.log('Opened connection to Bitmex Live Price Websocket 🎉');
         }
@@ -70,10 +67,6 @@ class BitmexLivePrice extends Component {
         //         })
         //     })
         // }, 100);
-    }
-    componentWillUnmount() {
-        // clearInterval(this.state.livePriceInterval);
-        // clearInterval(this.state.orderBookInterval);
     }
 
     render() {
