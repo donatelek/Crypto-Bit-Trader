@@ -103,6 +103,7 @@ div.register {
             left: 50%;
             margin-top: 10px;
             transform: translateX(-50%);
+            width: 300px;
 
             @include s-mobile {
                 line-height: 20px;
