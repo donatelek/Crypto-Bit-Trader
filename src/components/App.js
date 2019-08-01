@@ -10,6 +10,7 @@ import Register from './Register'
 import Dashboard from './Dashboard'
 import { Route, withRouter, Switch, Redirect } from 'react-router-dom';
 import * as actionTypes from '../store/actions'
+
 class App extends Component {
   state = {
     fetched: false

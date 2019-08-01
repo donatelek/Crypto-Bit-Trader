@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link, withRouter, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux'
 import * as actionTypes from '../store/actions'
+
 class Login extends Component {
     state = {
         email: '',
@@ -76,18 +77,6 @@ class Login extends Component {
                     this.props.saveUser(user, token, true)
                     localStorage.setItem('bitTraderUser', token)
                     this.props.history.push('/dashboard')
-                    // fetch('http://localhost:3005/saveLocalStorage',{
-                    // method:'post',
-                    // headers:{'Content-Type':'application/json'},
-                    // body:JSON.stringify({
-                    //     user,
-                    //     token
-                    // })
-                    // }).then(res=>res.json())
-                    // .then(encrypted=>{
-                    //     localStorage.setItem('bitTraderUser', encrypted)
-                    //     // this.props.history.push('/dashboard')
-                    // })
                 } else if (data === 'wrong password') {
                     this.setState({
                         responseError: 'Wrong username or password.'

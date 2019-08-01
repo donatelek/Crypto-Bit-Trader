@@ -1,0 +1,137 @@
+@mixin s-desktop {
+    @media (max-width: 1150px) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: 640px) {
+        @content;
+    }
+}
+
+h1.featureTitle {
+    text-align: center;
+    letter-spacing: 1px;
+
+    @include mobile {
+        font-size: 32px;
+        letter-spacing: 0.5px;
+    }
+}
+
+.feature-icon {
+    img {
+        height: 100px;
+    }
+}
+
+.feedback-icon {
+    img {
+        border-radius: 50px;
+    }
+}
+
+div.chat {
+    position: fixed;
+    bottom: 30px;
+    right: 50px;
+    font-size: 20px;
+    width: 150px;
+    height: 60px;
+    border-radius: 50px;
+    background: linear-gradient(65deg, #0275e1 0, #198ffd 100%);
+    // background: linear-gradient(to left, #0e9414, #1f864a);
+    color: white;
+
+    cursor: pointer;
+
+    @include mobile {
+        width: 60px;
+        height: 60px;
+        bottom: 15px;
+        right: 15px;
+    }
+
+    div.support {
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        transform: translate(80%, -50%);
+        font-weight: bold;
+        letter-spacing: 1px;
+        cursor: pointer;
+
+        @include mobile {
+            display: none;
+        }
+    }
+
+    div.supportIcon {
+        position: absolute;
+        left: 33px;
+        top: 50%;
+        font-size: 22px;
+        transform: translateY(-50%);
+        cursor: pointer;
+
+        @include mobile {
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}
+
+p.text-sm {
+    font-style: oblique;
+}
+
+.footer-copyright {
+    position: absolute;
+    // margin-right: 10px;
+    transform: translateX(50%);
+    right: 50%;
+    bottom: 10px;
+
+    @include mobile {
+        width: 250px;
+        text-align: center;
+    }
+}
+
+.site-footer-inner {
+    position: relative;
+
+    .footer-links {
+
+        @include mobile {
+            display: none;
+        }
+    }
+
+    @include s-desktop {
+        width: 90vw;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+    @include mobile {
+        padding-top: 0;
+        margin-top: 50px;
+
+    }
+
+    a {
+        padding-top: 10px;
+    }
+}
+
+
+.header-logo-image {
+    width: 40px;
+}
+
+.footer-brand {
+    bottom: 11px;
+    position: relative;
+}

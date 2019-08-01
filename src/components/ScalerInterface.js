@@ -27,6 +27,7 @@ class ScalerInterface extends Component {
             symbol: value
         })
     }
+
     handleSideChange = (e) => {
         const side = e.target.id
         this.setState({
@@ -46,6 +47,7 @@ class ScalerInterface extends Component {
             })
         }
     }
+
     handleInputs = (e) => {
         const name = e.target.name
         const value = e.target.value
@@ -72,11 +74,10 @@ class ScalerInterface extends Component {
         }
     }
 
-    handleSubmitOrder = () => {
+    handleValidation = () => {
         const end = Number(this.state.highestPrice)
         const start = Number(this.state.lowestPrice)
         const split = Number(this.state.split)
-        const prices = []
         let errors = {
             rangePrice: false,
             split: false,
@@ -118,8 +119,16 @@ class ScalerInterface extends Component {
             document.getElementById('leverageInput').style.borderColor = 'rgb(107, 94, 94)';
             errors.leverage = false
         }
+        return errors
+    }
+
+    handleSubmitOrder = () => {
+        const end = Number(this.state.highestPrice)
+        const start = Number(this.state.lowestPrice)
+        const split = Number(this.state.split)
+        const prices = []
+        const errors = this.handleValidation()
         if (errors.orderQty || errors.rangePrice || errors.split || errors.leverage) {
-            console.log(errors)
             return
         }
         const dprice = (end - start) / (split - 1)
@@ -191,44 +200,8 @@ class ScalerInterface extends Component {
         const start = Number(this.state.lowestPrice)
         const split = Number(this.state.split)
         const prices = []
-        let error = false
-        if (end < 1 || !end || start >= end) {
-            document.getElementById('highestPriceInput').style.borderColor = 'red';
-            error = true
-        } else {
-            document.getElementById('highestPriceInput').style.borderColor = 'rgb(107, 94, 94)';
-            error = false
-        }
-        if (start < 1 || !start || end <= start) {
-            document.getElementById('lowestPriceInput').style.borderColor = 'red';
-            error = true
-        } else {
-            document.getElementById('lowestPriceInput').style.borderColor = 'rgb(107, 94, 94)';
-            error = false
-        }
-        if (split < 1 || !split || split > this.state.orderQty) {
-            document.getElementById('splitInput').style.borderColor = 'red';
-            error = true
-        } else {
-            document.getElementById('splitInput').style.borderColor = 'rgb(107, 94, 94)';
-            error = false
-        }
-        if (this.state.orderQty < 1 || !this.state.orderQty || split > this.state.orderQty) {
-            document.getElementById('quantityInput').style.borderColor = 'red';
-            error = true
-        } else {
-            document.getElementById('quantityInput').style.borderColor = 'rgb(107, 94, 94)';
-            error = false
-        }
-        if (this.state.leverage < 0 || this.state.leverage > 100 || !this.state.leverage) {
-            document.getElementById('leverageInput').style.borderColor = 'red';
-            error = true
-        } else {
-            document.getElementById('leverageInput').style.borderColor = 'rgb(107, 94, 94)';
-            error = false
-        }
-        if (error === true) {
-            console.log(error)
+        const errors = this.handleValidation()
+        if (errors.orderQty || errors.rangePrice || errors.split || errors.leverage) {
             return
         }
         const dprice = (end - start) / (split - 1)

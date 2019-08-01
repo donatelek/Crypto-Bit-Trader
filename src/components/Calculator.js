@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import CoinpaprikaAPI from '@coinpaprika/api-nodejs-client';
 import { connect } from 'react-redux'
 
 class Calculator extends Component {
@@ -9,18 +8,6 @@ class Calculator extends Component {
         coinSearchInput: '',
         showHamburger: false
     }
-
-    componentDidMount() {
-        // const client = new CoinpaprikaAPI();
-
-        // client.getTicker().then((data)=>{
-        //     console.log(data)
-        //     this.setState({
-        //         coinsApi:data
-        //     })
-        // }).catch(console.error)
-    }
-
     handleButtonClick = e => {
         const text = e.target.outerText
         const checkForRepeats = symbol => {
@@ -135,7 +122,6 @@ class Calculator extends Component {
         })
     }
     handleSearchCoins = (e) => {
-
         const value = e.target.value.toUpperCase()
         const mainArray = []
         this.props.allCoins.forEach((coin, index) => {
@@ -192,18 +178,18 @@ class Calculator extends Component {
 
             <div className="calculator">
                 <div className="hamburger" >
-                    {!this.state.showHamburger && <i class="fas fa-bars" onClick={this.handleShowHamburger}></i>}
+                    {!this.state.showHamburger && <i className="fas fa-bars" onClick={this.handleShowHamburger}></i>}
                 </div>
                 {this.state.showHamburger && <div className="hamburgerMenu">
                     <div className="close">
-                        <i class="fas fa-times" onClick={this.handleShowHamburger} ></i>
+                        <i className="fas fa-times" onClick={this.handleShowHamburger} ></i>
                     </div>
                     <input type="text" onChange={this.handleSearchCoins} placeholder='Write coin symbol eg. ETH' value={this.state.coinSearchInput} />
                     <ul>
                         {showSearchedCoins()}
                     </ul>
                 </div>}
-                <input type="text" onFocus={this.handleCalculatorInput} value={this.state.resultCalculator} id='calculatorInput' className="searchCrypto" />
+                <input type="text" readOnly onFocus={this.handleCalculatorInput} value={this.state.resultCalculator} id='calculatorInput' className="searchCrypto" />
                 <div className="result"></div>
                 <div className="buttonsWrapper">
                     <button onClick={this.handleButtonClick}>C</button>

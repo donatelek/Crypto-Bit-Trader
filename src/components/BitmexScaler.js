@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ScalerAuthentication from './ScalerAuthentication'
 import ScalerInterface from './ScalerInterface'
 import { connect } from 'react-redux'
+
 class BitmexScaler extends Component {
     state = {
         platform: 'https://testnet.bitmex.com',

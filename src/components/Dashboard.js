@@ -12,9 +12,8 @@ import BitmexScaler from './BitmexScaler'
 import TechnicalAnalysisWidget from './TechnicalAnalysisWidget'
 import MarketDataWidget from './MarketDataWidget'
 import BitmexLivePrice from './BitmexLivePrice'
-// import BitmexPrice from './BitmexPrice'
 import TradingViewChart from './TradingViewChart'
-// const er =require('./BitmexPrice')
+
 class Dashboard extends Component {
     state = {
         coinsArray: [],
@@ -23,32 +22,6 @@ class Dashboard extends Component {
     }
 
     componentDidMount = () => {
-
-
-        // if(user[1]){
-        //   console.log(user[1])
-        //   this.props.saveUser(user,hash)
-        //   localStorage.setItem('bitTraderUser', hash)
-        //   this.props.history.push('/dashboard')
-        //   // this.props.handleSaveUser()
-        //  }else{
-        //   this.props.history.push('/login')
-        //  }
-        // const hash = localStorage.getItem('bitTraderUser');
-        // fetch('https://crypto-tool-server.herokuapp.com/getlocalstorage',{
-        //     method:'post',
-        //     headers:{'Content-Type':'application/json'},
-        //     body: JSON.stringify({
-        //         hash
-        //     })
-        // }).then(res=>res.json())
-        // .then(data=>{
-        //   const user=data.split(',')
-        //   if(!user[1]){
-        //     this.props.history.push('/')
-        //    }
-        // });
-
         (async () => {
             const cp = require('coinpaprika-js');
             const coins = await cp.tickers()
@@ -64,6 +37,7 @@ class Dashboard extends Component {
             }
             this.props.handleSaveCoins(coinsArray)
         })();
+
         setInterval(() => {
             (async () => {
                 const cp = require('coinpaprika-js');
@@ -92,6 +66,9 @@ class Dashboard extends Component {
         blur.style.display = 'none'
     }
     websocketImplementation = () => {
+
+        //WEBSOCKET IMPLEMENTATION WITHOUT BACKEND
+
         // const socket = new WebSocket('wss://www.bitmex.com/realtime?subscribe=instrument,orderBook:XBTUSD');
         // socket.addEventListener('open', function (event) {
         //     socket.send('Hello Server!');
@@ -107,11 +84,8 @@ class Dashboard extends Component {
     }
 
     render() {
-        // const storage = localStorage.getItem('bitTraderUser')
-        // const dragHandlers = {onStart: this.onStart, onStop: this.onStop};
         return (
             <>
-                {/* {!this.props.email&&!storage?<Redirect to='/login'/>:null} */}
                 <div className="dashboard">
                     {this.props.coins && <Ticker offset="run-in" speed={10} >
                         {() => <PriceSpinner />}
@@ -157,6 +131,7 @@ class Dashboard extends Component {
                             <BitmexLivePrice />
                         </div>
                     </Draggable>}
+                    <div className="version">Beta v0.1</div>
                 </div>
             </>
         );

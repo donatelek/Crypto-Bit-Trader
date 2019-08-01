@@ -14,6 +14,7 @@ class DashboardNav extends Component {
                 <div className="lockDrag">
                     {this.props.lockedDraggable ? <><div className='czx' onClick={this.props.handleLockDrag} >Unlock Dragging</div><i className="fas fa-lock" onClick={this.props.handleLockDrag} ></i></> : <><div onClick={this.props.handleLockDrag} >Lock Dragging</div><i className="fas fa-lock-open" onClick={this.props.handleLockDrag}></i></>}
                 </div>
+                <div className="noteDragging">To write in tools, you need to lock dragging!</div>
             </div>
         );
     }

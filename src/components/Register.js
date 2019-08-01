@@ -79,20 +79,6 @@ class Register extends Component {
                     this.props.saveUser(user, token, true)
                     localStorage.setItem('bitTraderUser', token)
                     this.props.history.push('/dashboard')
-
-                    // fetch('https://crypto-tool-server.herokuapp.com/saveLocalStorage',{
-                    // method:'post',
-                    // headers:{'Content-Type':'application/json'},
-                    // body:JSON.stringify({
-                    //     id,
-                    //     user,
-                    //     hash
-                    // })
-                    // }).then(res=>res.json())
-                    // .then(encrypted=>{
-                    //     localStorage.setItem('bitTraderUser', encrypted)
-                    //     this.props.history.push('/dashboard')
-                    // })
                 } else if (data === 'user exist') {
                     this.setState({
                         responseError: 'User with those credentials already exists.'
@@ -113,7 +99,6 @@ class Register extends Component {
                     }, 2000)
                 }
             })
-
     }
 
     handleRegisterAuth = (e) => {

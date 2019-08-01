@@ -1,9 +1,7 @@
 div.calculator {
-    // background-color: red;
     width: 322px;
     user-select: none;
     height: 454px;
-    // margin-left: 50%;
     right: 0;
     margin-top: 150px;
     transform: translateX(-50%);
@@ -35,7 +33,6 @@ div.calculator {
             box-shadow: 0 8px 6px -6px black;
 
             li {
-
                 margin: 0;
                 padding-left: 10px;
                 list-style-type: none;
@@ -65,9 +62,7 @@ div.calculator {
     }
 
     div.hamburger {
-        // background-color: pink;
         height: 50px;
-
 
         i {
             font-size: 30px;
@@ -78,7 +73,6 @@ div.calculator {
     }
 
     input {
-
         width: 100%;
         margin-top: 10px;
         margin-bottom: 10px;
@@ -90,7 +84,6 @@ div.calculator {
 
     .buttonsWrapper {
         height: 73%;
-        background-color: green;
 
         button {
             color: white;
@@ -107,6 +100,5 @@ div.calculator {
                 text-decoration: line-through;
             }
         }
-
     }
 }

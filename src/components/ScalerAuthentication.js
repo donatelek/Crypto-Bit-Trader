@@ -41,22 +41,22 @@ class ScalerAuthentication extends Component {
             <div className="scalerAuthentication">
                 <ul className='platform'>
                     <li>
-                        <input type="radio" id='official' onClick={this.props.handlePlatformChange} checked={this.props.officialChecked} />
+                        <input type="radio" id='official' onClick={this.props.handlePlatformChange} checked={this.props.officialChecked} readOnly />
                         <label htmlFor="official">Official</label>
                     </li>
                     <li>
                         <label htmlFor="testnet">Testnet</label>
-                        <input type="radio" id='testnet' onClick={this.props.handlePlatformChange} checked={this.props.testnetChecked} />
+                        <input type="radio" id='testnet' readOnly onClick={this.props.handlePlatformChange} checked={this.props.testnetChecked} />
                     </li>
                 </ul>
                 <div className="authWrapper">
                     <label>Api key</label>
                     <br />
-                    <input type="text" name='apiKey' id='apiKeyInput' onChange={this.handleApiChange} value={this.state.apiKey} />
+                    <input type="text" name='apiKey' id='apiKeyInput' spellCheck='false' onChange={this.handleApiChange} value={this.state.apiKey} />
                     <br />
                     <label htmlFor="">Api Secret</label>
                     <br />
-                    <input type="text" name='apiSecret' id='apiSecretInput' onChange={this.handleApiChange} value={this.state.apiSecret} />
+                    <input type="text" name='apiSecret' id='apiSecretInput' spellCheck='false' onChange={this.handleApiChange} value={this.state.apiSecret} />
                 </div>
                 <button className='nextButton' onClick={this.handleNextButton}>Next ></button>
                 <div className="note">To get your api go here:</div>

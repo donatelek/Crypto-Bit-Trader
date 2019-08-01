@@ -43,7 +43,7 @@ class ShortsLongsCounter extends Component {
                         <h1>LONGS</h1>
                         {this.state.longs && <div className='number'>{this.state.longs} $</div>}
                         <div className="percentage">{longsInPercentage}%</div>
-                    </div></> : <><div className="loader"><i class="fas fa-circle-notch"></i></div><div className="loader"><i class="fas fa-circle-notch"></i></div></>}
+                    </div></> : <><div className="loader"><i className="fas fa-circle-notch"></i></div><div className="loader"><i className="fas fa-circle-notch"></i></div></>}
             </div>
         );
     }

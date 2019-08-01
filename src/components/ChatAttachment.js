@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import Files from 'react-files'
-import axios from 'axios'
-import Blob from 'blob'
+import Files from 'react-files';
+import axios from 'axios';
+import Blob from 'blob';
+
 class ChatAttachment extends Component {
   constructor(props) {
     super(props)
@@ -50,7 +51,7 @@ class ChatAttachment extends Component {
           onChange={this.onFilesChange}
           onError={this.onFilesError}
           multiple
-          maxFiles={10}
+          maxFiles={5}
           maxFileSize={10000000}
           minFileSize={0}
           clickable

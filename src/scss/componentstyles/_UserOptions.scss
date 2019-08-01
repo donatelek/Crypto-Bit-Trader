@@ -6,16 +6,10 @@
     margin-top: 10px;
     margin-left: 20px;
 
-    button:hover ul.options {
-        background-color: green !important;
-    }
-
     button {
-        // background-color: rgb(37, 134, 179);
         background-color: transparent;
         color: white;
         position: relative;
-        // padding: 1px 25px;
         text-align: center;
         top: -1px;
         font-size: 16px;
@@ -96,6 +90,4 @@
 
 .userOptions:hover .options {
     display: block;
-    // background-image: linear-gradient(to right top, #3b3939, #383535, #343131, #312d2d, #2e2929);
-
 }
