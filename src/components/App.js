@@ -10,7 +10,6 @@ import Register from './Register'
 import Dashboard from './Dashboard'
 import { Route, withRouter, Switch, Redirect } from 'react-router-dom';
 import * as actionTypes from '../store/actions'
-import { AnimatedSwitch } from 'react-router-transition';
 
 class App extends Component {
   state = {
