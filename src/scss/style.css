@@ -2188,6 +2188,7 @@ p.text-sm {
 @media (max-width: 640px) {
   .site-footer-inner {
     padding-top: 0;
+    margin-top: 50px;
   }
 }
 
@@ -3724,6 +3725,7 @@ div.register form div.mobileSupport {
   margin-top: 10px;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+  width: 300px;
 }
 
 @media (max-width: 470px) {
