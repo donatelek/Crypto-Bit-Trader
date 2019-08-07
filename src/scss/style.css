@@ -2774,7 +2774,10 @@ div.calculator .buttonsWrapper button:nth-child(25), div.calculator .buttonsWrap
   position: relative;
   height: 535px;
   overflow: scroll;
+  scrollbar-width: none;
   overflow-x: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 @media (max-height: 750px) {
@@ -3503,6 +3506,7 @@ div.navigation ul li:last-of-type {
   margin: 0;
   padding: 0;
   font-weight: bold;
+  width: 56px;
 }
 
 .priceSpinner ul li span {
