@@ -2411,6 +2411,7 @@ div.bitmexLivePrice ul li.bid .bidSize {
   padding: 25px 0;
   color: white;
   border-radius: 10px;
+  overflow: hidden;
 }
 
 .scalerInterface .backButton {
