@@ -9,7 +9,8 @@ class Calculator extends Component {
         showHamburger: false
     }
     handleButtonClick = e => {
-        const text = e.target.outerText
+        const text = e.target.innerText
+        console.log(text)
         const checkForRepeats = symbol => {
             if (this.state.resultCalculator.includes(symbol) || this.state.resultCalculator === '') {
                 return true
