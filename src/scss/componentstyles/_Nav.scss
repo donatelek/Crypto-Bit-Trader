@@ -75,6 +75,13 @@ div.navigation {
                 color: rgb(255, 255, 255);
                 padding: 8px 25px;
                 background: linear-gradient(65deg, #0270D7 0, #0F8AFD 100%);
+                transition: background .4s ease-out;
+                background-size: 1px 200px;
+
+                &:hover {
+                    background: linear-gradient(65deg, #0F8AFD, rgb(96, 163, 226) 100%);
+                    background-position: 120px;
+                }
             }
 
             a {
