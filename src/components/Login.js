@@ -18,17 +18,24 @@ class Login extends Component {
     }
 
     handleEmailError = (e) => {
+        const emailInput = document.getElementById('loginEmailInput')
         if (!this.state.email.includes('@') || this.state.email.trim === '') {
+            emailInput.style.borderColor = 'red'
+            emailInput.style.borderWidth = '2px'
             this.setState({
                 emailError: true
             })
             setTimeout(() => {
+                emailInput.style.borderColor = 'unset'
+                emailInput.style.borderWidth = '1px'
                 this.setState({
                     emailError: false
                 })
             }, 2000)
             return true
         } else {
+            emailInput.style.borderColor = 'unset'
+            emailInput.style.borderWidth = '1px'
             this.setState({
                 emailError: false
             })
@@ -36,17 +43,24 @@ class Login extends Component {
     }
 
     handlePasswordError = () => {
+        const passwordInput = document.getElementById('loginPasswordInput')
         if (this.state.password.length < 8) {
+            passwordInput.style.borderColor = 'red'
+            passwordInput.style.borderWidth = '2px'
             this.setState({
                 passwordError: true
             })
             setTimeout(() => {
+                passwordInput.style.borderColor = 'unset'
+                passwordInput.style.borderWidth = '1px'
                 this.setState({
                     passwordError: false
                 })
             }, 2000)
             return true
         } else {
+            passwordInput.style.borderColor = 'unset'
+            passwordInput.style.borderWidth = '1px'
             this.setState({
                 passwordError: false
             })
@@ -121,12 +135,12 @@ class Login extends Component {
                 <form action="" >
                     <label htmlFor="">Account</label>
                     <br />
-                    <input type="email" placeholder='Email' onChange={this.handleLoginAuth} value={this.state.email} />
+                    <input id='loginEmailInput' type="email" placeholder='Email' onChange={this.handleLoginAuth} value={this.state.email} />
                     {this.state.emailError && <div className="error">{this.errors.wrongEmail}</div>}
                     <br />
                     <label htmlFor="">Password</label>
                     <br />
-                    <input type="password" placeholder='Please enter a password' onChange={this.handleLoginAuth} value={this.state.password} />
+                    <input id='loginPasswordInput' type="password" placeholder='Please enter a password' onChange={this.handleLoginAuth} value={this.state.password} />
                     {this.state.passwordError && <div className="error">{this.errors.wrongPassword}</div>}
                     <div className="forgotPassword">Forgot Password ?</div>
                     <button className='submit' onClick={this.handleSubmitLogin} >Login</button>

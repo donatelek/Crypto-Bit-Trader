@@ -18,11 +18,16 @@ class Register extends Component {
     }
 
     handleEmailError = (e) => {
+        const emailInput = document.getElementById('registerEmailInput')
         if (!this.state.email.includes('@') || this.state.email.trim === '') {
+            emailInput.style.borderColor = 'red'
+            emailInput.style.borderWidth = '2px'
             this.setState({
                 emailError: true
             })
             setTimeout(() => {
+                emailInput.style.borderColor = 'unset'
+                emailInput.style.borderWidth = '1px'
                 this.setState({
                     emailError: false
                 })
@@ -36,11 +41,16 @@ class Register extends Component {
     }
 
     handlePasswordError = () => {
+        const passwordInput = document.getElementById('registerPasswordInput')
         if (this.state.password.length < 8) {
+            passwordInput.style.borderColor = 'red'
+            passwordInput.style.borderWidth = '2px'
             this.setState({
                 passwordError: true
             })
             setTimeout(() => {
+                passwordInput.style.borderColor = 'unset'
+                passwordInput.style.borderWidth = '1px'
                 this.setState({
                     passwordError: false
                 })
@@ -126,21 +136,21 @@ class Register extends Component {
                 <form action="">
                     <label htmlFor="">Email</label>
                     <br />
-                    <input type="email" value={this.state.email} onChange={this.handleRegisterAuth} placeholder='Please enter email address' />
+                    <input type="email" id='registerEmailInput' value={this.state.email} onChange={this.handleRegisterAuth} placeholder='Please enter email address' />
                     {this.state.emailError && <div className="error">{this.errors.wrongEmail}</div>}
                     <br />
                     <label htmlFor="">Password</label>
                     <br />
-                    <input type="password" onChange={this.handleRegisterAuth} value={this.state.password} placeholder='Please enter a password' />
+                    <input type="password" id='registerPasswordInput' onChange={this.handleRegisterAuth} value={this.state.password} placeholder='Please enter a password' />
                     {this.state.passwordError && <div className="error">{this.errors.wrongPassword}</div>}
                     <br />
                     <label htmlFor="">Referral Code</label>
                     <br />
                     <input onChange={this.handleRegisterAuth} value={this.state.referralCode} type="text" />
+                    <div className="responseError">{this.state.responseError}</div>
                     <br />
                     <button className="submit" onClick={this.handleSubmitRegister}  >Register</button>
-                    {!this.state.responseError && <div className="mobileSupport">This tool does not support mobile devices</div>}
-                    <div className="responseError">{this.state.responseError}</div>
+                    <div className="mobileSupport">This tool does not support mobile devices</div>
                     <br />
                     <div className="terms">By clicking Sign Up, you agree to <a href="/">Terms of service</a> and <a href="/">Privacy policy</a></div>
                 </form>

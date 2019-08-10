@@ -84,12 +84,13 @@ div.register {
         position: relative;
 
         div.responseError {
-            color: red;
+            color: rgb(209, 10, 10);
             font-size: 15px;
             position: absolute;
             margin-top: 10px;
             left: 50%;
             transform: translateX(-50%);
+            font-weight: bold;
 
             @include s-mobile {
                 line-height: 20px;
@@ -185,6 +186,11 @@ div.register {
                 width: 90%;
                 margin-left: 20px;
                 margin-right: 20px;
+
+                &:hover {
+                    background: linear-gradient(65deg, rgb(96, 163, 226) 0, #0F8AFD 100%);
+                    background-position: unset;
+                }
             }
         }
 
