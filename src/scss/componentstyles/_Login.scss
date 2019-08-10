@@ -168,6 +168,11 @@ div.login {
                 width: 90%;
                 margin-left: 20px;
                 margin-right: 20px;
+
+                &:hover {
+                    background: linear-gradient(65deg, rgb(96, 163, 226) 0, #0F8AFD 100%);
+                    background-position: unset;
+                }
             }
         }
 

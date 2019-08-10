@@ -41,10 +41,12 @@ div.chat {
     height: 60px;
     border-radius: 50px;
     background: linear-gradient(65deg, #0275e1 0, #198ffd 100%);
-    // background: linear-gradient(to left, #0e9414, #1f864a);
     color: white;
-
     cursor: pointer;
+
+    &:hover {
+        background: linear-gradient(65deg, #087eec 0, #2495ff 100%);
+    }
 
     @include mobile {
         width: 60px;
