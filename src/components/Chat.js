@@ -33,8 +33,9 @@ class Chat extends Component {
   handleChatInputs = e => {
     const name = e.target.name
     const value = e.target.value
+    const filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     if (name === 'email') {
-      if (!value.includes('@') || !value) {
+      if (!value.includes('@') || !value || !filter.test(value)) {
         document.getElementById('chatEmailInput').style.borderColor = 'rgb(207, 15, 15)';
         this.setState({
           emailError: true,

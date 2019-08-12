@@ -19,7 +19,8 @@ class Login extends Component {
 
     handleEmailError = (e) => {
         const emailInput = document.getElementById('loginEmailInput')
-        if (!this.state.email.includes('@') || this.state.email.trim === '') {
+        const filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        if (!this.state.email.includes('@') || this.state.email.trim === '' || !filter.test(this.state.email)) {
             emailInput.style.borderColor = 'red'
             emailInput.style.borderWidth = '2px'
             this.setState({
@@ -44,6 +45,7 @@ class Login extends Component {
 
     handlePasswordError = () => {
         const passwordInput = document.getElementById('loginPasswordInput')
+
         if (this.state.password.length < 8) {
             passwordInput.style.borderColor = 'red'
             passwordInput.style.borderWidth = '2px'

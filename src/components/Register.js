@@ -19,7 +19,8 @@ class Register extends Component {
 
     handleEmailError = (e) => {
         const emailInput = document.getElementById('registerEmailInput')
-        if (!this.state.email.includes('@') || this.state.email.trim === '') {
+        const filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        if (!this.state.email.includes('@') || this.state.email.trim === '' || !filter.test(this.state.email)) {
             emailInput.style.borderColor = 'red'
             emailInput.style.borderWidth = '2px'
             this.setState({
