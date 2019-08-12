@@ -33,6 +33,7 @@ class Chat extends Component {
   handleChatInputs = e => {
     const name = e.target.name
     const value = e.target.value
+    // eslint-disable-next-line
     const filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     if (name === 'email') {
       if (!value.includes('@') || !value || !filter.test(value)) {
