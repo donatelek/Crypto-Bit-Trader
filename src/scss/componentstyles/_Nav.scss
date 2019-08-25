@@ -64,7 +64,11 @@ div.navigation {
             list-style-type: none;
             font-size: 18px !important;
             padding: 5px 15px;
-            cursor: pointer;
+
+            a {
+                cursor: pointer;
+
+            }
 
             @include mobile {
                 margin-right: 10px;

@@ -44,7 +44,7 @@ div.dashboardNav {
 
 div.userInformation {
     position: absolute;
-    right: 140px;
+    right: 225px;
     top: 8px;
     font-size: 16px;
 }
@@ -64,7 +64,7 @@ div.userInformation {
 }
 
 .version {
-    position: absolute;
+    position: fixed;
     opacity: 0.5;
     bottom: 0;
     left: 10px;

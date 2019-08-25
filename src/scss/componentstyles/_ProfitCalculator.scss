@@ -7,8 +7,42 @@ div.profitCalculator {
     border: 1px solid rgba(105, 105, 105, 0.65);
     background-image: linear-gradient(to right top, #000000, #100f0f, #1a1818, #242021, #2e2929);
     background-image: linear-gradient(to right top, #3b3939, #383535, #343131, #312d2d, #2e2929);
-    border-radius: 10px;
+    // border-radius: 10px;
     color: white;
+    animation: fade1 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+
+    @keyframes fade1 {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    .drag {
+        background: linear-gradient(to left, #000000, #434343);
+        position: absolute;
+        border-top: 1px solid rgba(117, 117, 117, 0.486);
+        border-right: 1px solid rgba(117, 117, 117, 0.486);
+        border-left: 1px solid rgba(117, 117, 117, 0.486);
+        width: 101.1%;
+        height: 30px;
+        top: -31px;
+        left: -2px;
+    }
+
+    .blur {
+        position: absolute;
+        display: none;
+        background-color: rgba(255, 255, 255, 0.157);
+        width: 200px;
+        height: 750px;
+        left: 0;
+        z-index: 3;
+        // top: 30px;
+    }
 
     ul.currency {
         display: flex;

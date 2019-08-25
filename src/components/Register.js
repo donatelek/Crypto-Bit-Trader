@@ -9,14 +9,21 @@ class Register extends Component {
         referralCode: '',
         emailError: false,
         passwordError: false,
-        responseError: ''
+        responseError: '',
     }
 
     errors = {
         wrongEmail: 'Invalid email address',
         wrongPassword: 'Password has to be between 8-30 characters'
     }
-
+    componentDidMount() {
+        if (this.props.location.search.length === 14) {
+            const referralCode = this.props.location.search.substr(5)
+            this.setState({
+                referralCode
+            })
+        }
+    }
     handleEmailError = (e) => {
         const emailInput = document.getElementById('registerEmailInput')
         // eslint-disable-next-line
@@ -65,6 +72,40 @@ class Register extends Component {
         }
     }
 
+    handleSubmitAnonymousRegister = () => {
+        fetch('https://crypto-tool-server.herokuapp.com/anonymous')
+            .then(res => res.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    const user = data.user
+                    const token = data.token
+                    const referral = data.referral
+                    const referralCounter = data.referralCounter
+                    this.props.saveUser(user, token, true, referralCounter, referral)
+                    localStorage.setItem('bitTraderUser', token)
+                    this.props.history.push('/dashboard')
+                } else if (data === 'user exist') {
+                    this.setState({
+                        responseError: 'User with those credentials already exists.'
+                    })
+                    setTimeout(() => {
+                        this.setState({
+                            responseError: ''
+                        })
+                    }, 2000)
+                } else {
+                    this.setState({
+                        responseError: 'We have encountered an Error. Try again later.'
+                    })
+                    setTimeout(() => {
+                        this.setState({
+                            responseError: ''
+                        })
+                    }, 2000)
+                }
+            })
+    }
+
     handleSubmitRegister = (e) => {
         e.preventDefault();
         const isPasswordError = this.handlePasswordError()
@@ -81,14 +122,16 @@ class Register extends Component {
             body: JSON.stringify({
                 email,
                 password,
-                referral
+                referredBy: referral
             })
         }).then(res => res.json())
             .then(data => {
                 if (data.status === 'success') {
                     const user = data.user
                     const token = data.token
-                    this.props.saveUser(user, token, true)
+                    const referral = data.referral
+                    const referralCounter = data.referralCounter
+                    this.props.saveUser(user, token, true, referralCounter, referral)
                     localStorage.setItem('bitTraderUser', token)
                     this.props.history.push('/dashboard')
                 } else if (data === 'user exist') {
@@ -157,13 +200,14 @@ class Register extends Component {
                     <div className="terms">By clicking Sign Up, you agree to <a href="/">Terms of service</a> and <a href="/">Privacy policy</a></div>
                 </form>
                 <div className="haveAcc">Already have an account? <Link to='/login'>Log in Now</Link> </div>
+                <button className="withoutRegister" onClick={this.handleSubmitAnonymousRegister}>Try without register</button>
             </div>
         );
     }
 }
 const mapDispatchToProps = dispatch => {
     return {
-        saveUser: (user, token, isAuth) => dispatch(actionTypes.saveUser(user, token, isAuth))
+        saveUser: (user, token, isAuth, referralCounter, referral) => dispatch(actionTypes.saveUser(user, token, isAuth, referralCounter, referral))
     }
 }
 export default connect(null, mapDispatchToProps)(withRouter(Register));

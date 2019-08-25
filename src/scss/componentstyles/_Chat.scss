@@ -29,6 +29,17 @@
     border: 1px solid rgb(107, 94, 94);
     background-color: #1D2026;
     z-index: 99;
+    animation: fade1 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+
+    @keyframes fade1 {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
 
     @include chatHeight {
         height: 575px;

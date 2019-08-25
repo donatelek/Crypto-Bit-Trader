@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-
+import Draggable from 'react-draggable';
 class Calculator extends Component {
     state = {
         resultCalculator: '',
@@ -10,7 +10,6 @@ class Calculator extends Component {
     }
     handleButtonClick = e => {
         const text = e.target.innerText
-        console.log(text)
         const checkForRepeats = symbol => {
             if (this.state.resultCalculator.includes(symbol) || this.state.resultCalculator === '') {
                 return true
@@ -178,6 +177,8 @@ class Calculator extends Component {
         return (
 
             <div className="calculator">
+                {!this.props.lockedDraggable && <><section className="drag" onMouseDown={() => this.props.handleDisplayBlur('calculatorBlur')} onMouseUp={() => this.props.handleRemoveBlur('calculatorBlur')} ></section>
+                    <div className="blur" id='calculatorBlur' ></div></>}
                 <div className="hamburger" >
                     {!this.state.showHamburger && <i className="fas fa-bars" onClick={this.handleShowHamburger}></i>}
                 </div>
