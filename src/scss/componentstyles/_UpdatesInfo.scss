@@ -1,0 +1,88 @@
+.updatesInfo {
+    position: absolute;
+    color: white;
+    width: 35px;
+    height: 40px;
+    text-align: center;
+    right: 130px;
+    top: -2px;
+    margin-top: 10px;
+    margin-left: 20px;
+
+    &:hover .infoAboutUpdates {
+        display: block;
+    }
+
+    i {
+        cursor: pointer;
+    }
+
+    .infoAboutUpdates {
+        position: absolute;
+        display: none;
+        right: 0;
+        top: 40px;
+        width: 400px;
+        height: 400px;
+        text-align: center;
+        overflow-y: scroll;
+        border: 1px solid grey;
+        background: linear-gradient(to bottom, #4f4f50, #444446);
+        z-index: 3;
+
+        &::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+            background-color: #F5F5F5;
+        }
+
+        &::-webkit-scrollbar {
+            width: 5px;
+            background-color: #F5F5F5;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: #205e91;
+        }
+
+        * {
+            margin: 5px 0 !important;
+            padding: 0;
+            line-height: normal !important;
+            list-style: none !important;
+        }
+
+        h1 {
+            font-size: 18px;
+        }
+
+        .update {
+            h1 {
+                font-size: 14px;
+            }
+
+            .date {
+                font-size: 12px;
+            }
+
+            section {
+                text-align: left;
+                padding-left: 10px !important;
+
+                article {
+
+                    h1 {
+                        font-size: 14px;
+                        border-bottom: 1px solid grey;
+
+                    }
+
+                    ul {
+                        li {
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
