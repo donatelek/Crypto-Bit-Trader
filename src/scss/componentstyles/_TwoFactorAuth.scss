@@ -1,0 +1,105 @@
+.twoFactorAuth {
+    background-color: rgb(82, 82, 82);
+    width: 100%;
+    height: 37%;
+    padding: 5px 25px;
+    border-radius: 5px;
+    margin-top: 25px;
+
+    h1 {
+        margin: 0;
+        padding: 0;
+        font-size: 22px;
+        border-bottom: 1px solid grey;
+    }
+
+    button {
+        margin-top: 15px;
+        width: 100%;
+        height: 45px;
+        border-radius: 5px;
+        border: none;
+        color: white;
+        font-size: 18px;
+        background: linear-gradient(65deg, #0275e1 0, #198ffd 100%);
+        cursor: pointer;
+        &:hover {
+            background: linear-gradient(65deg, #026dd1 0, #167edf 100%);
+        }
+    }
+
+    .twoFactorAuthEnabled {
+        background: linear-gradient(to top, #11998e, #38ef7d);
+    }
+}
+
+.twoFactorAuthConnector {
+    background-color: rgb(110, 102, 102);
+    height: 550px;
+    width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 5px 25px;
+    border-radius: 5px;
+
+    .error {
+        position: absolute;
+        top: 393px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: red;
+        font-weight: bold;
+    }
+
+    svg {
+        left: 50%;
+        top: 50%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+    }
+
+    #c2 {
+        stroke-dasharray: 20;
+        stroke-dashoffset: 1000;
+        animation: loading2 2s ease infinite;
+        -webkit-animation: loading2 2s ease infinite;
+    }
+
+    @keyframes loading2 {
+        to {
+            stroke-dashoffset: 0;
+        }
+    }
+
+    .captcha {
+        margin: 25px auto;
+    }
+
+    h1 {
+        margin: 0;
+        padding: 0;
+        font-size: 22px;
+        border-bottom: 1px solid grey;
+        text-align: center;
+    }
+
+    div {
+        font-size: 16px;
+        color: rgb(226, 226, 226);
+        text-align: center;
+    }
+
+    input {
+        width: 100%;
+        height: 45px;
+        border-radius: 5px;
+        border: 1px solid grey;
+        padding: 0 8px;
+        font-size: 17px;
+        margin: 15px 0;
+    }
+
+
+}
