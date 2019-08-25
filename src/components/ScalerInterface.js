@@ -9,8 +9,6 @@ class ScalerInterface extends Component {
         price: 595,
         ordType: 'Limit',
         side: 'Buy',
-        short: false,
-        long: true,
         lowestPrice: 1000,
         highestPrice: 2000,
         split: 10,
@@ -18,7 +16,8 @@ class ScalerInterface extends Component {
         ordersPerTrade: '',
         leverage: 100,
         backedError: '',
-        errorMessage: ''
+        errorMessage: '',
+        sideInputChecked: true
     }
 
     handleInstrumentSelect = (e) => {
@@ -28,22 +27,18 @@ class ScalerInterface extends Component {
         })
     }
 
-    handleSideChange = (e) => {
-        const side = e.target.id
+
+    handleSideChange = () => {
         this.setState({
-            side
+            sideInputChecked: !this.state.sideInputChecked
         })
-        if (side === 'long') {
+        if (!this.state.sideInputChecked) {
             this.setState({
                 side: 'Buy',
-                long: true,
-                short: false
             })
         } else {
             this.setState({
                 side: 'Sell',
-                long: false,
-                short: true
             })
         }
     }
@@ -263,14 +258,17 @@ class ScalerInterface extends Component {
                     </div>
                     <div className="side">
                         <ul>
-                            <li>
+                            <li>Short</li>
+                            <input type="checkbox" onClick={this.handleSideChange} checked={this.state.sideInputChecked} id="switch" /><label className='switch' for="switch">Toggle</label>
+                            <li>Long</li>
+                            {/* <li>
                                 <label htmlFor="long">Long</label>
                                 <input id='long' type="radio" checked={this.state.long} onChange={this.handleSideChange} />
                             </li>
                             <li>
                                 <input id='short' checked={this.state.short} type="radio" onChange={this.handleSideChange} />
                                 <label htmlFor="short">Short</label>
-                            </li>
+                            </li> */}
                         </ul>
                     </div>
                 </div>
@@ -327,13 +325,13 @@ class ScalerInterface extends Component {
 
 const mapStateToProps = state => {
     return {
-        apiKey: state.apiKey,
-        apiSecret: state.apiSecret,
+        apiKey: state.apiKeyTemporary,
+        apiSecret: state.apiSecretTemporary,
     }
 }
 const mapDispatchToProps = dispatch => {
     return {
-        handleSaveApi: (apiKey, apiSecret) => dispatch({ type: actionTypes.SAVE_API, apiKey, apiSecret })
+        handleSaveApi: (apiKeyTemporary, apiSecretTemporary) => dispatch({ type: actionTypes.SAVE_API_TEMPORARY, apiKeyTemporary, apiSecretTemporary })
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(ScalerInterface);

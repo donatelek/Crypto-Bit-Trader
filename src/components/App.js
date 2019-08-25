@@ -34,7 +34,16 @@ class App extends Component {
         if (data.user && data.token) {
           const user = data.user
           const token = data.token
-          this.props.saveUser(user, token, true)
+          const isTwoFactorAuthEnabled = data.twoFactorAuth
+          const isBillingAddressUpdated = data.billingAddress
+          const referral = data.referral
+          const referralCounter = data.referralCounter
+          this.props.handleIsBillingAddressUpdated(isBillingAddressUpdated)
+          this.props.handleIsTwoFactorAuthEnabled(isTwoFactorAuthEnabled)
+          this.props.saveUser(user, token, true, referralCounter, referral)
+          if (data.apiKey) {
+            this.props.handleSaveApi(data.apiKey, data.apiSecret)
+          }
         } else {
           this.props.saveUser('', '', false)
           localStorage.clear()
@@ -45,12 +54,31 @@ class App extends Component {
         })
       })
   }
+  componentDidMount() {
+    const path = this.props.location.pathname;
+    const body = this.mainWrapper
+    if (body) {
+      if (path === '/dashboard') {
+        body.style.height = `calc(130vh * ${Number(this.props.dashboardSize)})`
+      } else {
+        body.style.height = 'unset'
+      }
+    }
+  }
   render() {
     const path = this.props.location.pathname;
+    const body = this.mainWrapper
+    if (body) {
+      if (path === '/dashboard') {
+        body.style.height = `calc(130vh * ${Number(this.props.dashboardSize)})`
+      } else {
+        body.style.height = 'unset'
+      }
+    }
     return (
       <>
         {path !== '/dashboard' && <Nav />}
-        <div className="body-wrap" id='wrapper'>
+        <div className="body-wrap" id='wrapper' ref={el => this.mainWrapper = el}>
           {path !== '/dashboard' && <NavLogo />}
           <Switch>
             <Route path='/register' exact={true} component={Register} />
@@ -70,12 +98,17 @@ const mapStateToProps = state => {
   return {
     path: state.path,
     email: state.email,
-    isAuth: state.isAuth
+    isAuth: state.isAuth,
+    dashboardSize: state.dashboardSize
   }
 }
 const mapDispatchToProps = dispatch => {
   return {
-    saveUser: (user, token, isAuth) => dispatch(actionTypes.saveUser(user, token, isAuth))
+    // saveUser: (user, token, isAuth, referralCounter, referral) => dispatch(actionTypes.saveUser(user, token, isAuth, referralCounter, referral)),
+    saveUser: (user, token, isAuth, referralCounter, referral) => dispatch({ type: actionTypes.SAVE_USER, user, token, isAuth, referralCounter, referral }),
+    handleIsBillingAddressUpdated: (isUpdated) => dispatch({ type: actionTypes.IS_BILLING_ADDRESS_UPDATED, isUpdated }),
+    handleIsTwoFactorAuthEnabled: (isEnabled) => dispatch({ type: actionTypes.IS_TWO_FACTOR_AUTH_ENABLED, isEnabled }),
+    handleSaveApi: (apiKey, apiSecret) => dispatch({ type: actionTypes.SAVE_API, apiKey, apiSecret }),
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(App));

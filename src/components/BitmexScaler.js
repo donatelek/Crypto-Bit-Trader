@@ -6,23 +6,20 @@ import { connect } from 'react-redux'
 class BitmexScaler extends Component {
     state = {
         platform: 'https://testnet.bitmex.com',
-        officialChecked: false,
-        testnetChecked: true
+        platformInputChecked: false,
     }
 
-    handlePlatformChange = (e) => {
-        const id = e.target.id
-        if (id === 'official') {
+    handlePlatformChange = () => {
+        this.setState({
+            platformInputChecked: !this.state.platformInputChecked
+        })
+        if (!this.state.platformInputChecked) {
             this.setState({
                 platform: 'https://www.bitmex.com',
-                officialChecked: true,
-                testnetChecked: false
             })
-        } else if (id === 'testnet') {
+        } else {
             this.setState({
                 platform: 'https://testnet.bitmex.com',
-                officialChecked: false,
-                testnetChecked: true
             })
         }
     }
@@ -30,15 +27,17 @@ class BitmexScaler extends Component {
     render() {
         return (
             <div className="bitmexScaler">
-                {this.props.apiKey && this.props.apiSecret ? <ScalerInterface platform={this.state.platform} /> : <ScalerAuthentication officialChecked={this.state.officialChecked} testnetChecked={this.state.testnetChecked} handlePlatformChange={this.handlePlatformChange} />}
+                {!this.props.lockedDraggable && <><section className="drag" onMouseDown={() => this.props.handleDisplayBlur('bitmexScalerBlur')} onMouseUp={() => this.props.handleRemoveBlur('bitmexScalerBlur')} ></section>
+                    <div className="blur" id='bitmexScalerBlur'></div></>}
+                {this.props.apiKey && this.props.apiSecret ? <ScalerInterface platform={this.state.platform} /> : <ScalerAuthentication handlePlatformChange={this.handlePlatformChange} />}
             </div>
         );
     }
 }
 const mapStateToProps = state => {
     return {
-        apiKey: state.apiKey,
-        apiSecret: state.apiSecret,
+        apiKey: state.apiKeyTemporary,
+        apiSecret: state.apiSecretTemporary,
     }
 }
 
