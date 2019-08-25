@@ -160,7 +160,7 @@ class Dashboard extends Component {
                     {this.props.showUserSettings && <UserSettings />}
                     {this.props.showSubscriptions && <Subscriptions toggleSubscriptions={this.toggleSubscriptions} />}
                     {this.props.showInviteFriends && <InviteFriends />}
-                    <div className="version">Beta v0.1</div>
+                    <div className="version">Beta v0.2</div>
                 </div>
             </>
         );
