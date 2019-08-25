@@ -9,6 +9,8 @@ const initialState = {
     showTradingview: false,
     apiKey: '',
     apiSecret: '',
+    apiKeyTemporary: '',
+    apiSecretTemporary: '',
     showBitmexScaler: false,
     coins: '',
     allCoins: '',
@@ -17,7 +19,15 @@ const initialState = {
     showBitmexLivePrice: false,
     user: '',
     token: '',
-    isAuth: false
+    isAuth: false,
+    showUserSettings: false,
+    showSubscriptions: false,
+    showInviteFriends: false,
+    isTwoFactorAuthEnabled: false,
+    isBillingAddressUpdated: false,
+    referralCode: '',
+    referralCounter: '',
+    dashboardSize: '1'
 }
 
 const reducer = (state = initialState, action) => {
@@ -72,7 +82,9 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 user: action.user,
                 token: action.token,
-                isAuth: action.isAuth
+                isAuth: action.isAuth,
+                referralCounter: action.referralCounter,
+                referralCode: action.referral
             }
         case actionTypes.SAVE_COINS:
             return {
@@ -89,6 +101,42 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 apiKey: action.apiKey,
                 apiSecret: action.apiSecret
+            }
+        case actionTypes.SAVE_API_TEMPORARY:
+            return {
+                ...state,
+                apiKeyTemporary: action.apiKeyTemporary,
+                apiSecretTemporary: action.apiSecretTemporary
+            }
+        case actionTypes.SHOW_USER_SETTINGS:
+            return {
+                ...state,
+                showUserSettings: !state.showUserSettings
+            }
+        case actionTypes.SHOW_SUBSCRIPTIONS:
+            return {
+                ...state,
+                showSubscriptions: !state.showSubscriptions
+            }
+        case actionTypes.SHOW_INVITE_FRIENDS:
+            return {
+                ...state,
+                showInviteFriends: !state.showInviteFriends
+            }
+        case actionTypes.IS_BILLING_ADDRESS_UPDATED:
+            return {
+                ...state,
+                isBillingAddressUpdated: action.isUpdated
+            }
+        case actionTypes.IS_TWO_FACTOR_AUTH_ENABLED:
+            return {
+                ...state,
+                isTwoFactorAuthEnabled: action.isEnabled
+            }
+        case actionTypes.DASHBOARD_SIZE:
+            return {
+                ...state,
+                dashboardSize: action.size
             }
         default:
             return state

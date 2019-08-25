@@ -5,7 +5,7 @@ class TradingViewChart extends Component {
     render() {
         return (
             <div className="tradingviewChart">
-                <div className="drag" onMouseDown={() => this.props.handleDisplayBlur('chartBlur')} onMouseUp={() => this.props.handleRemoveBlur('chartBlur')} ></div>
+                {!this.props.lockedDraggable && <><div className="drag" onMouseDown={() => this.props.handleDisplayBlur('chartBlur')} onMouseUp={() => this.props.handleRemoveBlur('chartBlur')} ></div></>}
                 <div className="blur" id='chartBlur' ></div>
                 <TradingViewWidget className='tradingview' theme={Themes.DARK} width={800} height={400} symbol={'XBT'} />
             </div>

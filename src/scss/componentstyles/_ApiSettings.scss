@@ -1,0 +1,107 @@
+.apiSettings {
+    width: 100%;
+    height: 55%;
+    background-color: rgb(82, 82, 82);
+    padding: 5px 25px;
+    border-radius: 5px;
+
+    h1 {
+        margin: 0;
+        padding: 0;
+        font-size: 22px;
+        border-bottom: 1px solid grey;
+        // color: rgb(219, 219, 219);
+    }
+
+    .form {
+        margin-top: 10px;
+        position: relative;
+
+        label {
+            font-size: 16px;
+            color: white;
+        }
+
+        input {
+            width: 100%;
+            height: 45px;
+            border-radius: 5px;
+            border: 1px solid grey;
+            padding: 0 8px;
+            font-size: 17px;
+            margin-bottom: 25px;
+        }
+
+        input[type=submit] {
+            margin-top: 25px;
+            height: 50px;
+            border: none;
+            color: white;
+            background: linear-gradient(65deg, #0275e1 0, #198ffd 100%);
+            font-size: 18px;
+            cursor: pointer;
+
+            &:hover {
+                background: linear-gradient(65deg, #026dd1 0, #167edf 100%);
+            }
+        }
+
+        .error {
+            font-size: 14px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            text-align: center;
+            color: red;
+        }
+
+        .apiKeyError {
+            top: 80px;
+        }
+
+        .apiSecretError {
+            top: 180px;
+        }
+
+        .respMessage {
+            top: 188px;
+        }
+    }
+
+}
+
+.apiSettingsUpdated {
+    width: 100%;
+    height: 20%;
+    background-color: rgb(82, 82, 82);
+    padding: 5px 25px;
+    border-radius: 5px;
+
+    h1 {
+        margin: 0;
+        padding: 0;
+        font-size: 22px;
+        border-bottom: 1px solid grey;
+        // color: rgb(219, 219, 219);
+    }
+
+    input {
+        width: 100%;
+        height: 45px;
+        border-radius: 5px;
+        border: 1px solid grey;
+        padding: 0 8px;
+        font-size: 17px;
+        // margin-bottom: 25px;
+    }
+
+    input[type=submit] {
+        margin-top: 15px;
+        border: none;
+        color: white;
+        background: linear-gradient(to top, #11998e, #38ef7d);
+        font-size: 18px;
+
+    }
+}

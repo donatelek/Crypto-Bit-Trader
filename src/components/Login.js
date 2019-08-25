@@ -2,19 +2,28 @@ import React, { Component } from 'react';
 import { Link, withRouter, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux'
 import * as actionTypes from '../store/actions'
+import ForgotPassword from './ForgotPassword'
 
 class Login extends Component {
     state = {
         email: '',
         password: '',
+        twoFactorAuth: '',
         emailError: false,
         passwordError: false,
-        responseError: ''
+        responseError: '',
+        showForgotPassword: false
     }
 
     errors = {
         wrongEmail: 'Invalid email address',
         wrongPassword: 'Password has to be between 8-30 characters'
+    }
+
+    toggleForgotPassword = () => {
+        this.setState({
+            showForgotPassword: !this.state.showForgotPassword
+        })
     }
 
     handleEmailError = (e) => {
@@ -84,14 +93,22 @@ class Login extends Component {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 email,
-                password
+                password,
+                token: this.state.twoFactorAuth
             })
         }).then(res => res.json())
             .then(data => {
                 if (data.status === 'success') {
                     const user = data.user
                     const token = data.token
-                    this.props.saveUser(user, token, true)
+                    const referral = data.referral
+                    const referralCounter = data.referralCounter
+                    this.props.saveUser(user, token, true, referralCounter, referral)
+                    this.props.handleIsBillingAddressUpdated(data.isBillingAddress)
+                    this.props.handleIsTwoFactorAuthEnabled(data.isTwoFactorAuth)
+                    if (data.api) {
+                        this.props.handleSaveApi(data.api.apiKey, data.api.apiSecret)
+                    }
                     localStorage.setItem('bitTraderUser', token)
                     this.props.history.push('/dashboard')
                 } else if (data === 'wrong password') {
@@ -117,40 +134,51 @@ class Login extends Component {
     }
 
     handleLoginAuth = (e) => {
-        const type = e.target.type
+        const name = e.target.name
         const value = e.target.value
-        if (type === 'password') {
+        if (name === 'password') {
             this.setState({
                 password: value
             })
-        } else if (type === 'email') {
+        } else if (name === 'email') {
             this.setState({
                 email: value
+            })
+        } else if (name === 'Fa') {
+            this.setState({
+                twoFactorAuth: value
             })
         }
     }
 
     render() {
         return (
-            <div className="login">
-                {this.props.isAuth && <Redirect to='/dashboard' />}
-                <h1>Login Account</h1>
-                <form action="" >
-                    <label htmlFor="">Account</label>
-                    <br />
-                    <input id='loginEmailInput' type="email" placeholder='Email' onChange={this.handleLoginAuth} value={this.state.email} />
-                    {this.state.emailError && <div className="error">{this.errors.wrongEmail}</div>}
-                    <br />
-                    <label htmlFor="">Password</label>
-                    <br />
-                    <input id='loginPasswordInput' type="password" placeholder='Please enter a password' onChange={this.handleLoginAuth} value={this.state.password} />
-                    {this.state.passwordError && <div className="error">{this.errors.wrongPassword}</div>}
-                    <div className="forgotPassword">Forgot Password ?</div>
-                    <button className='submit' onClick={this.handleSubmitLogin} >Login</button>
-                    <div className="responseError">{this.state.responseError}</div>
-                </form>
-                <div className="noAcc">Dont't have an account yet? <Link to='/register'>Register Now</Link></div>
-            </div>
+            <>
+                <div className="login">
+                    {this.props.isAuth && <Redirect to='/dashboard' />}
+                    <h1>Login Account</h1>
+                    <form action="" >
+                        <label htmlFor="">Account</label>
+                        <br />
+                        <input id='loginEmailInput' name='email' type="email" placeholder='Email' onChange={this.handleLoginAuth} value={this.state.email} />
+                        {this.state.emailError && <div className="error">{this.errors.wrongEmail}</div>}
+                        <br />
+                        <label htmlFor="">Password</label>
+                        <br />
+                        <input id='loginPasswordInput' name='password' type="password" placeholder='Please enter a password' onChange={this.handleLoginAuth} value={this.state.password} />
+                        {this.state.passwordError && <div className="error">{this.errors.wrongPassword}</div>}
+                        <br />
+                        <label htmlFor="">Two-Factor Token (if enabled)</label>
+                        <br />
+                        <input id='loginFaInput' name='Fa' type="number" placeholder='Google Authenticator' onChange={this.handleLoginAuth} value={this.state.twoFactorAuth} />
+                        <div className="forgotPasswordButton" onClick={this.toggleForgotPassword} >Forgot Password ?</div>
+                        <button className='submit' onClick={this.handleSubmitLogin} >Login</button>
+                        <div className="responseError">{this.state.responseError}</div>
+                    </form>
+                    <div className="noAcc">Dont't have an account yet? <Link to='/register'>Register Now</Link></div>
+                </div>
+                {this.state.showForgotPassword && <ForgotPassword toggleForgotPassword={this.toggleForgotPassword} />}
+            </>
         );
     }
 }
@@ -161,7 +189,10 @@ const mapStateToProps = state => {
 }
 const mapDispatchToProps = dispatch => {
     return {
-        saveUser: (user, token, isAuth) => dispatch(actionTypes.saveUser(user, token, isAuth))
+        saveUser: (user, token, isAuth, referralCounter, referral) => dispatch(actionTypes.saveUser(user, token, isAuth, referralCounter, referral)),
+        handleSaveApi: (apiKey, apiSecret) => dispatch({ type: actionTypes.SAVE_API, apiKey, apiSecret }),
+        handleIsBillingAddressUpdated: (isUpdated) => dispatch({ type: actionTypes.IS_BILLING_ADDRESS_UPDATED, isUpdated }),
+        handleIsTwoFactorAuthEnabled: (isEnabled) => dispatch({ type: actionTypes.IS_TWO_FACTOR_AUTH_ENABLED, isEnabled }),
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Login));

@@ -1,0 +1,124 @@
+.subscriptions {
+    background-image: linear-gradient(to right top, #3b3939, #383535, #343131, #312d2d, #2e2929);
+    border: 1px solid rgba(105, 105, 105, 0.65);
+    position: absolute;
+    width: 50vw;
+    height: 650px;
+    margin-top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+    animation: fade1 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+
+    h1.subscriptionTitle {
+        font-size: 30px;
+        margin: 0;
+        text-align: center;
+        padding: 5px 0;
+        letter-spacing: 0.5px;
+    }
+
+    @keyframes fade1 {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    .close {
+        position: absolute;
+        right: 10px;
+        top: 5px;
+        font-size: 35px;
+        color: rgb(190, 190, 190);
+        cursor: pointer;
+    }
+
+    .standard {
+        width: 350px;
+        height: 380px;
+        margin: 0 auto;
+        position: relative;
+        text-align: center;
+        // border-radius: 5px;
+        padding: 25px;
+        background: linear-gradient(to bottom, #4f4f50, #444446);
+        border: 1px solid rgba(105, 105, 105, 0.65);
+        // margin-top: 25px;
+
+        h1 {
+            font-size: 25px;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        div {
+            border-bottom: 1px solid rgba(105, 105, 105, 0.308);
+            font-size: 16px;
+            padding: 8px 0;
+        }
+
+        button {
+            margin-top: 25px;
+            height: 50px;
+            width: 80%;
+            font-size: 18px;
+            border: none;
+            color: white;
+            background: linear-gradient(65deg, #0275e1 0, #198ffd 100%);
+            border-radius: 5px;
+        }
+    }
+
+    .promoCode {
+        background: linear-gradient(to bottom, #4f4f50, #444446);
+        border: 1px solid rgba(105, 105, 105, 0.65);
+        text-align: center;
+        height: 150px;
+        margin-left: 50%;
+        transform: translateX(-50%);
+        width: 430px;
+        // border-radius: 5px;
+        position: relative;
+        margin-top: 25px;
+
+        h1 {
+            margin: 0;
+            line-height: inherit;
+            font-size: 18px;
+            letter-spacing: .5px;
+            padding-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        input {
+            width: 70%;
+            height: 35px;
+            border-radius: 5px;
+            border: 1px solid grey;
+            padding: 0 8px;
+            margin-bottom: 15px;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        input[type=submit] {
+            height: 35px;
+            font-size: 18px;
+            text-align: center;
+            border: none;
+            text-align: center;
+            width: 100px;
+            color: white;
+            background: linear-gradient(65deg, #0275e1 0, #198ffd 100%);
+        }
+    }
+}
