@@ -7,7 +7,7 @@ class InviteFriends extends Component {
         referralLink: ''
     }
     componentDidMount() {
-        const referralLink = `http://localhost:3000/register?ref=${this.props.referralCode}`
+        const referralLink = `https://crypto-bit-trader.herokuapp.com/register?ref=${this.props.referralCode}`
         this.setState({
             referralCode: this.props.referralCode,
             referralLink: referralLink
