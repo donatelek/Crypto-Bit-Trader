@@ -51,7 +51,7 @@ class BillingAddress extends Component {
     }
 
     handleSubmit = () => {
-        const { address, city, postalCode, phone, country, addressError, cityError, postalCodeError, countryError } = this.state
+        const { address, city, postalCode, phone, country } = this.state
         let error = false
         if (!address) {
             this.addressInput.style.borderColor = 'red'

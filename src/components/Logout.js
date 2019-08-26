@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import * as actionTypes from '../store/actions'
 import { connect } from 'react-redux'
-import { thisExpression } from '@babel/types';
 
 class Logout extends Component {
     state = {}
