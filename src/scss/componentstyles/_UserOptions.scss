@@ -16,10 +16,11 @@
         border: none;
         cursor: pointer;
         width: 100%;
+        line-height: 37px;
 
         i {
             cursor: pointer;
-
+            font-size: 22px;
 
             &:hover .options {
                 display: inline;
@@ -37,10 +38,45 @@
         margin: 0;
         padding: 0;
         right: 0px;
+        border-radius: 5px;
+        overflow: hidden;
+
+        .logout {
+            text-decoration: none;
+            color: black;
+            width: 100%;
+            margin-left: 50%;
+            transform: translateX(-50%);
+            height: 30px;
+            padding: 0;
+            border-radius: 5px;
+            background-color: rgb(42, 116, 177);
+            position: relative;
+            color: white;
+
+            &:hover {
+                background-color: rgb(32, 101, 158);
+            }
+
+            a {
+                margin: 0;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                width: 150px;
+                padding: 0;
+                position: absolute;
+                text-align: center;
+
+                i {
+                    margin-left: 10px;
+                }
+            }
+        }
 
         li {
             color: black;
-            padding: 6px 12px;
+            padding: 6px 30px;
             text-decoration: none;
             display: block;
             font-size: 15px;
@@ -48,44 +84,57 @@
             display: flex;
             position: relative;
             text-decoration: line-through;
+            width: 100%;
 
-            .logout {
-                text-decoration: none;
-                color: black;
-                width: 100%;
-                height: 100%;
+            .icon {
+                position: absolute;
+                right: 30px;
+
+                i {
+                    color: rgb(78, 78, 78);
+                }
             }
 
-            &:last-of-type {
-                text-decoration: none;
-            }
+
+        }
+
+        .logout {
+            text-decoration: none;
+        }
+
+        .settings {
+            text-decoration: none;
         }
     }
 }
 
-.options li {
-    color: black;
-    padding: 6px 12px;
-    text-decoration: none;
-    display: block;
-    font-size: 15px;
-    cursor: pointer;
-    display: flex;
-    position: relative;
+// .options li {
+//     color: black;
+//     padding: 6px 12px;
+//     text-decoration: none;
+//     display: block;
+//     font-size: 15px;
+//     cursor: pointer;
+//     display: flex;
+//     position: relative;
 
-    div.title {
-        margin-left: 25px;
-    }
+//     div.title {
+//         margin-left: 25px;
+//     }
 
-    div.icon {
-        position: absolute;
-        left: 10px;
-        color: rgb(35, 199, 6);
-    }
-}
+//     div.icon {
+//         position: absolute;
+//         left: 10px;
+//         color: rgb(35, 199, 6);
+//     }
+// }
 
 .options li:hover {
     background-color: #f1f1f1;
+}
+
+.options .logoutSet:hover {
+    background-color: inherit;
 }
 
 .userOptions:hover .options {

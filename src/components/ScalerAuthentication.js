@@ -9,7 +9,14 @@ class ScalerAuthentication extends Component {
         officialChecked: false,
         testnetChecked: true
     }
-
+    componentDidMount() {
+        if (this.props.apiKey && this.props.apiSecret) {
+            this.setState({
+                apiKey: this.props.apiKey,
+                apiSecret: this.props.apiSecret
+            })
+        }
+    }
     handleApiChange = (e) => {
         const name = e.target.name
         const value = e.target.value
@@ -40,14 +47,17 @@ class ScalerAuthentication extends Component {
         return (
             <div className="scalerAuthentication">
                 <ul className='platform'>
-                    <li>
+                    <li>Testnet</li>
+                    <input type="checkbox" onClick={this.props.handlePlatformChange} checked={this.props.officialChecked} id="switch" /><label for="switch">Toggle</label>
+                    <li>Official</li>
+                    {/* <li>
                         <input type="radio" id='official' onClick={this.props.handlePlatformChange} checked={this.props.officialChecked} readOnly />
                         <label htmlFor="official">Official</label>
                     </li>
                     <li>
                         <label htmlFor="testnet">Testnet</label>
                         <input type="radio" id='testnet' readOnly onClick={this.props.handlePlatformChange} checked={this.props.testnetChecked} />
-                    </li>
+                    </li> */}
                 </ul>
                 <div className="authWrapper">
                     <label>Api key</label>
@@ -70,10 +80,17 @@ class ScalerAuthentication extends Component {
     }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapStateToProps = state => {
     return {
-        handleSaveApi: (apiKey, apiSecret) => dispatch({ type: actionTypes.SAVE_API, apiKey, apiSecret })
+        apiKey: state.apiKey,
+        apiSecret: state.apiSecret,
     }
 }
 
-export default connect(null, mapDispatchToProps)(ScalerAuthentication);
+const mapDispatchToProps = dispatch => {
+    return {
+        handleSaveApi: (apiKeyTemporary, apiSecretTemporary) => dispatch({ type: actionTypes.SAVE_API_TEMPORARY, apiKeyTemporary, apiSecretTemporary })
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ScalerAuthentication);

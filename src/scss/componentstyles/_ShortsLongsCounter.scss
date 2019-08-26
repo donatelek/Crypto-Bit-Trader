@@ -13,6 +13,17 @@
     left: 50%;
     user-select: none;
     transform: translateX(-50%);
+    animation: fade1 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+
+    @keyframes fade1 {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
 
     &::before {
         content: '';

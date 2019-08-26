@@ -1,0 +1,73 @@
+.userSettings {
+    background-image: linear-gradient(to right top, #3b3939, #383535, #343131, #312d2d, #2e2929);
+    border: 1px solid rgba(105, 105, 105, 0.65);
+    position: absolute;
+    width: 90vw;
+    height: 820px;
+    margin-top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+    animation: fade1 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+
+    @keyframes fade1 {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    .close {
+        position: absolute;
+        right: 10px;
+        top: 5px;
+        font-size: 35px;
+        color: rgb(190, 190, 190);
+        cursor: pointer;
+    }
+
+    h1 {
+        margin: 0;
+        padding: 0;
+    }
+
+    ul {
+        padding: 0;
+        margin: 0;
+    }
+
+    .settingsTitle {
+        margin-left: 30px;
+        margin-top: 10px;
+        font-size: 28px;
+        position: absolute;
+
+    }
+
+    .settingsWrapper {
+        display: flex;
+        justify-content: space-around;
+        height: 640px;
+
+        .firstSectWrapper {
+            width: 30%;
+            height: 500px;
+            margin-top: 75px;
+        }
+
+        .secSectWrapper {
+            width: 30%;
+            height: 400px;
+            margin-top: 75px;
+        }
+
+        .thirdSectWrapper {
+            width: 30%;
+            height: 700px;
+            margin-top: 75px;
+        }
+    }
+}

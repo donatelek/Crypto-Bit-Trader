@@ -62,7 +62,7 @@ div.register {
     }
 
     div.haveAcc {
-        margin-top: 25px;
+        margin-top: 15px;
         font-size: 26px;
 
         a {
@@ -132,7 +132,11 @@ div.register {
 
             // background-color: red;
             @include mobile {
-                left: 40px;
+                left: 38px;
+            }
+
+            @include s-mobile {
+                left: 26px;
             }
         }
 
@@ -217,6 +221,22 @@ div.register {
     }
 }
 
+.withoutRegister {
+    margin-top: 15px;
+    width: 300px;
+    height: 50px;
+    font-size: 23px;
+    background-color: #f59223;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    outline: none;
+    // background: linear-gradient(65deg, rgb(96, 163, 226) 0, #0F8AFD 100%);
+    background: linear-gradient(65deg, rgb(96, 163, 226) 0, rgb(61, 183, 187) 100%);
+    cursor: pointer;
+    transition: background .4s ease-out;
+    background-size: 1px 200px;
+}
 
 
 .header-logo {

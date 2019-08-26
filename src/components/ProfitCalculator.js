@@ -134,6 +134,8 @@ class ProfitCalculator extends Component {
     render() {
         return (
             <div className='profitCalculator'>
+                {!this.props.lockedDraggable && <><section className="drag" onMouseDown={() => this.props.handleDisplayBlur('profitCalculatorBlur')} onMouseUp={() => this.props.handleRemoveBlur('profitCalculatorBlur')} ></section>
+                    <div className="blur" id='profitCalculatorBlur'></div></>}
                 <ul className='currency'>
                     <li id='currencyBtc' onClick={() => this.handleCalculateProfit(null, null, null, null, null, 'btc')}>BTC</li>
                     <li id='currencySatoshi' onClick={() => this.handleCalculateProfit(null, null, null, null, null, 'sat')}>Satoshi</li>
