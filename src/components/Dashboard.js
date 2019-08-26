@@ -13,7 +13,6 @@ import TechnicalAnalysisWidget from './TechnicalAnalysisWidget'
 import MarketDataWidget from './MarketDataWidget'
 import BitmexLivePrice from './BitmexLivePrice'
 import TradingViewChart from './TradingViewChart'
-import BitmexPositions from './BitmexPositions'
 
 import InviteFriends from './InviteFriends'
 import Subscriptions from './Subscriptions'
@@ -156,7 +155,6 @@ class Dashboard extends Component {
                             <BitmexLivePrice lockedDraggable={this.state.lockedDraggable} />
                         </div>
                     </Draggable>}
-                    {/* <BitmexPositions /> */}
                     {this.props.showUserSettings && <UserSettings />}
                     {this.props.showSubscriptions && <Subscriptions toggleSubscriptions={this.toggleSubscriptions} />}
                     {this.props.showInviteFriends && <InviteFriends />}

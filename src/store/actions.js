@@ -18,8 +18,14 @@ export const IS_TWO_FACTOR_AUTH_ENABLED = 'IS_TWO_FACTOR_AUTH_ENABLED';
 export const SAVE_API_TEMPORARY = 'SAVE_API_TEMPORARY';
 export const SHOW_INVITE_FRIENDS = 'SHOW_INVITE_FRIENDS';
 export const DASHBOARD_SIZE = 'DASHBOARD_SIZE';
+export const CLOSE_RATE_US = 'CLOSE_RATE_US';
 
 
+export const handleCloseRateUs = () => {
+    return {
+        type: CLOSE_RATE_US,
+    }
+}
 export const handleIsBillingAddressUpdated = isUpdated => {
     return {
         type: IS_BILLING_ADDRESS_UPDATED,
