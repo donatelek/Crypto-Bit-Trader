@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import Draggable from 'react-draggable';
 class Calculator extends Component {
     state = {
         resultCalculator: '',

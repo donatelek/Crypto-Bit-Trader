@@ -27,7 +27,8 @@ const initialState = {
     isBillingAddressUpdated: false,
     referralCode: '',
     referralCounter: '',
-    dashboardSize: '1'
+    dashboardSize: '1',
+    closeRateUs: false
 }
 
 const reducer = (state = initialState, action) => {
@@ -137,6 +138,11 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 dashboardSize: action.size
+            }
+        case actionTypes.CLOSE_RATE_US:
+            return {
+                ...state,
+                closeRateUs: true
             }
         default:
             return state

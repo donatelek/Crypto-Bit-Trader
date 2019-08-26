@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Dropdown from './Dropdown'
 import UserOptions from './UserOptions'
 import UserInformation from './UserInformation'
-import AccountBalance from './AccountBalance'
 import UpdatesInfo from './UpdatesInfo'
 class DashboardNav extends Component {
     state = {}

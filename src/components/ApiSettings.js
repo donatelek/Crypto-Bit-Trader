@@ -29,7 +29,7 @@ class ApiSettings extends Component {
         }
     }
     handleSubmit = () => {
-        const { apiKey, apiSecret, apiKeyError, apiSecretError } = this.state
+        const { apiKey, apiSecret } = this.state
         let error = false
         if (apiKey.length !== 24) {
             this.apiKeyInput.style.borderColor = 'red'
