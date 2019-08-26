@@ -1,0 +1,14 @@
+.rateUs {
+    border-radius: 50px;
+    position: fixed;
+    bottom: 30px;
+    right: 5px;
+    width: 250px;
+    height: 160px;
+    text-align: center;
+    z-index: 99;
+
+    fieldset {
+        margin: 0 auto;
+    }
+}

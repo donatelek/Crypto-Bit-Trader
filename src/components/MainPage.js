@@ -14,12 +14,14 @@ import user2 from '../images/user2.jpg'
 import user3 from '../images/user3.jpg'
 import { Link } from 'react-router-dom';
 import Fade from 'react-reveal/Reveal';
-
+import RateUs from './RateUs'
+import '../scss/starability-fade.min.css'
 class MainPage extends Component {
   state = {}
   render() {
     return (
       <main>
+        <RateUs />
         <section className="hero">
           <div className="container">
             <div className="hero-inner">
