@@ -6,7 +6,7 @@ class UpdatesInfo extends Component {
         return (
             <div className="updatesInfo">
                 <div className="bullhornIcon">
-                    <i class="fas fa-bullhorn"></i>
+                    <i className="fas fa-bullhorn"></i>
                 </div>
                 <InfoAboutUpdates />
             </div>

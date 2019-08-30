@@ -48,16 +48,8 @@ class ScalerAuthentication extends Component {
             <div className="scalerAuthentication">
                 <ul className='platform'>
                     <li>Testnet</li>
-                    <input type="checkbox" onClick={this.props.handlePlatformChange} checked={this.props.officialChecked} id="switch" /><label for="switch">Toggle</label>
+                    <input type="checkbox" onClick={this.props.handlePlatformChange} checked={this.props.officialChecked} id="switch" /><label htmlFor="switch">Toggle</label>
                     <li>Official</li>
-                    {/* <li>
-                        <input type="radio" id='official' onClick={this.props.handlePlatformChange} checked={this.props.officialChecked} readOnly />
-                        <label htmlFor="official">Official</label>
-                    </li>
-                    <li>
-                        <label htmlFor="testnet">Testnet</label>
-                        <input type="radio" id='testnet' readOnly onClick={this.props.handlePlatformChange} checked={this.props.testnetChecked} />
-                    </li> */}
                 </ul>
                 <div className="authWrapper">
                     <label>Api key</label>

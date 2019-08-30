@@ -17,7 +17,7 @@ class Register extends Component {
         wrongPassword: 'Password has to be between 8-30 characters'
     }
     componentDidMount() {
-        if (this.props.location.search.length === 14) {
+        if (this.props.location.search.includes('?ref=')) {
             const referralCode = this.props.location.search.substr(5)
             this.setState({
                 referralCode

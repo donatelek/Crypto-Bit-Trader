@@ -36,7 +36,7 @@ class TwoFactorAuthConnector extends Component {
     render() {
         return (
             <div className='twoFactorAuthConnector'>
-                {this.props.qrCode ? <><div className="close" onClick={this.props.toggleAuthConnector} ><i class="fas fa-times"></i></div>
+                {this.props.qrCode ? <><div className="close" onClick={this.props.toggleAuthConnector} ><i className="fas fa-times"></i></div>
                     <img src={this.props.qrCode} className='captcha' alt="" />
                     <h1>Connect Google authenticatior</h1>
                     <div>Don't forget to backup your secret key:</div>
@@ -45,7 +45,7 @@ class TwoFactorAuthConnector extends Component {
                     <div className="error">{this.state.respMessage}</div>
                     <button onClick={this.handleSubmit} >OK</button>
                     <button onClick={this.props.toggleAuthConnector} >Cancel</button></> : <svg height="200" width="200">
-                        <circle id="c2" cx="100" cy="100" r="50" stroke="#0000FF" stroke-width="5" fill="transparent" />
+                        <circle id="c2" cx="100" cy="100" r="50" stroke="#0000FF" strokeWidth="5" fill="transparent" />
                     </svg>}
             </div>
         );

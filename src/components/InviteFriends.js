@@ -19,7 +19,9 @@ class InviteFriends extends Component {
         this.deselectEl(this.referralCodeInput)
         this.copyCodeIcon.style.color = 'green';
         setTimeout(() => {
-            this.copyCodeIcon.style.color = 'unset';
+            if (this.copyCodeIcon) {
+                this.copyCodeIcon.style.color = 'unset';
+            }
         }, 1500)
     }
     handleCopyRefLink = () => {
@@ -28,7 +30,9 @@ class InviteFriends extends Component {
         this.deselectEl(this.referralLinkInput)
         this.copyLinkIcon.style.color = 'green';
         setTimeout(() => {
-            this.copyLinkIcon.style.color = 'unset';
+            if (this.copyLinkIcon) {
+                this.copyLinkIcon.style.color = 'unset';
+            }
         }, 1500)
     }
     deselectEl = (el) => {
@@ -48,21 +52,21 @@ class InviteFriends extends Component {
     render() {
         return (
             <div className="inviteFriends">
-                <div className="close" onClick={this.props.handleShowInviteFriends} ><i class="fas fa-times"></i></div>
+                <div className="close" onClick={this.props.handleShowInviteFriends} ><i className="fas fa-times"></i></div>
                 <h1>Referral Program</h1>
                 <h3>Receive $10 as Fees Bonus for every user that will register with your referral code</h3>
                 <label htmlFor="">Referral Code</label>
                 <br />
                 <div className="codeWrapper">
                     <input ref={el => this.referralCodeInput = el} value={this.state.referralCode} type="text" readOnly />
-                    <div className="copyCode" onClick={this.handleCopyRefCode}><i ref={el => this.copyCodeIcon = el} class="far fa-copy"></i></div>
+                    <div className="copyCode" onClick={this.handleCopyRefCode}><i ref={el => this.copyCodeIcon = el} className="far fa-copy"></i></div>
                 </div>
                 <br />
                 <label htmlFor="">Referral Link</label>
                 <br />
                 <div className="linkWrapper">
                     <input ref={el => this.referralLinkInput = el} value={this.state.referralLink} type="text" readOnly />
-                    <div className="copyLink" onClick={this.handleCopyRefLink} ><i class="far fa-copy" ref={el => this.copyLinkIcon = el}></i></div>
+                    <div className="copyLink" onClick={this.handleCopyRefLink} ><i className="far fa-copy" ref={el => this.copyLinkIcon = el}></i></div>
                 </div>
                 <div className="referredInfo">
                     <ul>

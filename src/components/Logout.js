@@ -24,7 +24,7 @@ class Logout extends Component {
     render() {
         return (
             <div className="logout">
-                <Link to='/' className="logout" onClick={this.handleLogoutUser}>Logout <i class="fas fa-sign-out-alt"></i></Link>
+                <Link to='/' className="logout" onClick={this.handleLogoutUser}>Logout <i className="fas fa-sign-out-alt"></i></Link>
             </div>
         );
     }

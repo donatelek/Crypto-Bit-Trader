@@ -6,7 +6,7 @@ class Subscriptions extends Component {
     render() {
         return (
             <div className="subscriptions">
-                <div className="close" onClick={this.props.handleShowSubscriptions} ><i class="fas fa-times"></i></div>
+                <div className="close" onClick={this.props.handleShowSubscriptions} ><i className="fas fa-times"></i></div>
                 <h1 className='subscriptionTitle'>Subscriptions</h1>
                 <div className="standard">
                     <h1>Standard Package</h1>
