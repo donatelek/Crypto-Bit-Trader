@@ -21,12 +21,9 @@ body {
 .body-wrap {
     background: color(bg, 2);
     overflow: hidden;
-    /* Sticky footer */
     display: flex;
     flex-direction: column;
-    min-height: 130vh;
-
-
+    min-height: 120vh;
 }
 
 .boxed-container {

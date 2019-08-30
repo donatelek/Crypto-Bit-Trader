@@ -76,7 +76,7 @@ class ChatAttachment extends Component {
                     id={file.id}
                     className='files-list-item-remove'
                     onClick={this.filesRemoveOne.bind(this, file)} // eslint-disable-line
-                  ><i class="fas fa-times"></i></div>
+                  ><i className="fas fa-times"></i></div>
                 </li>
               )}</ul>
             </div>

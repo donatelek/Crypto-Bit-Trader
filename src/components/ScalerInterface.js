@@ -190,6 +190,12 @@ class ScalerInterface extends Component {
             .catch(error => console.error('Error:', error));
     }
 
+    handleClosePreview = () => {
+        this.setState({
+            preview: ''
+        })
+    }
+
     handlePreview = () => {
         const end = Number(this.state.highestPrice)
         const start = Number(this.state.lowestPrice)
@@ -259,16 +265,8 @@ class ScalerInterface extends Component {
                     <div className="side">
                         <ul>
                             <li>Short</li>
-                            <input type="checkbox" onClick={this.handleSideChange} checked={this.state.sideInputChecked} id="switch" /><label className='switch' for="switch">Toggle</label>
+                            <input type="checkbox" onClick={this.handleSideChange} checked={this.state.sideInputChecked} id="switch" readOnly /><label className='switch' htmlFor="switch">Toggle</label>
                             <li>Long</li>
-                            {/* <li>
-                                <label htmlFor="long">Long</label>
-                                <input id='long' type="radio" checked={this.state.long} onChange={this.handleSideChange} />
-                            </li>
-                            <li>
-                                <input id='short' checked={this.state.short} type="radio" onChange={this.handleSideChange} />
-                                <label htmlFor="short">Short</label>
-                            </li> */}
                         </ul>
                     </div>
                 </div>
@@ -314,7 +312,7 @@ class ScalerInterface extends Component {
                     </ul>
                 </div>
                 <div className="buttonWrapper">
-                    <button onClick={this.handlePreview} className='previewButton'>Preview</button>
+                    {this.state.preview ? <button onClick={this.handleClosePreview} className='previewButton'>Hide Preview</button> : <button onClick={this.handlePreview} className='previewButton'>Preview</button>}
                     <button onClick={this.handleSubmitOrder} className='submitButton'>Submit</button>
                 </div>
                 <div className="backButton" onClick={this.handleExitInterface} >Back</div>

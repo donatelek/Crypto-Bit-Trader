@@ -12,8 +12,8 @@ class WindowSizeChanger extends Component {
         return (
             <div className="windowSizeChanger">
                 <h1>Dashboard Size</h1>
-                <select onChange={this.handleSelect} name="" id="">
-                    <option selected={true} value="1">1x</option>
+                <select onChange={this.handleSelect} name="windowSize" id="windowSize">
+                    <option defaultChecked value="1">1x</option>
                     <option value="1.25">1.25x</option>
                     <option value="1.5">1.5x</option>
                     <option value="2">2x</option>

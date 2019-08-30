@@ -15,11 +15,11 @@ class UserOptions extends Component {
     render() {
         return (
             <div className="userOptions">
-                <button className="userOptionsButton" onClick={this.handleShowUserOptions}><i className="fas fa-cog"></i></button>
+                <button className="userOptionsButton" ><i className="fas fa-cog" onClick={this.handleShowUserOptions}></i></button>
                 <ul className="options">
-                    <li className='settings' onClick={this.props.handleShowSubscriptions} >Subscription <div className="icon"><i class="fas fa-credit-card"></i></div> </li>
-                    <li className='settings' onClick={this.props.handleShowInviteFriends} >Invite Friends <div className="icon"><i class="fas fa-cubes"></i></div> </li>
-                    <li className='settings' onClick={this.props.handleShowUserSettings}>Settings <div className="icon"><i class="fas fa-cog"></i></div> </li>
+                    <li className='settings' onClick={this.props.handleShowSubscriptions} >Subscription <div className="icon"><i className="fas fa-credit-card"></i></div> </li>
+                    <li className='settings' onClick={this.props.handleShowInviteFriends} >Invite Friends <div className="icon"><i className="fas fa-cubes"></i></div> </li>
+                    <li className='settings' onClick={this.props.handleShowUserSettings}>Settings <div className="icon"><i className="fas fa-cog"></i></div> </li>
                     <li className='settings  logoutSet'><Logout /></li>
                 </ul>
             </div>

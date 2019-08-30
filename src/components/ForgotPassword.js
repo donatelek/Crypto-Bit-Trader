@@ -174,7 +174,7 @@ class ForgotPassword extends Component {
     render() {
         return (
             <div className='forgotPassword'>
-                <div className="close" onClick={this.props.handleShowInviteFriends} ><i class="fas fa-times" onClick={this.props.toggleForgotPassword} ></i></div>
+                <div className="close" onClick={this.props.handleShowInviteFriends} ><i className="fas fa-times" onClick={this.props.toggleForgotPassword} ></i></div>
                 <h1>Forgot Password?</h1>
                 <label htmlFor="">Email address associated with your account</label>
                 <br />

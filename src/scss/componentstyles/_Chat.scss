@@ -42,7 +42,10 @@
     }
 
     @include chatHeight {
-        height: 575px;
+        height: 95vh;
+        top: 3px;
+        bottom: 3px;
+        height: unset;
     }
 
     @include s-chatHeight {
@@ -53,11 +56,8 @@
     @include s-mobile {
         margin: 0;
         padding: 0;
-        width: unset;
-        height: unset;
+        width: calc(100% - 6px);
         left: 3px;
-        top: 3px;
-        bottom: 3px;
         right: 3px;
     }
 
@@ -72,7 +72,11 @@
         scrollbar-width: none;
 
         @include chatHeight {
-            height: 410px;
+            height: 455px;
+        }
+
+        @include s-chatHeight {
+            height: 400px;
         }
 
         &::-webkit-scrollbar {
@@ -89,7 +93,6 @@
             height: 40px;
             background-image: linear-gradient(to right top, #3b3939, #383535, #343131, #312d2d, #2e2929);
             border: 1px solid rgb(107, 94, 94);
-            // margin-bottom: 15px;
             margin-top: 3px;
             border-radius: 8px;
             color: white;
@@ -111,7 +114,11 @@
             resize: none;
 
             @include chatHeight {
-                height: 160px;
+                height: 250px;
+            }
+
+            @include s-chatHeight {
+                height: 190px;
             }
         }
 

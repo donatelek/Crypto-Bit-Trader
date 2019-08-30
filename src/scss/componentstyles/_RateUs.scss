@@ -1,14 +1,41 @@
 .rateUs {
-    border-radius: 50px;
     position: fixed;
-    bottom: 30px;
-    right: 5px;
-    width: 250px;
-    height: 160px;
+    bottom: 105px;
+    right: 0px;
+    width: 200px;
+    height: 70px;
     text-align: center;
     z-index: 99;
+    background: linear-gradient(to right, #0575e6, #1b39a7);
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    opacity: 1;
+    animation: fade-in-rate-us 2s ease;
+
+    @keyframes fade-in-rate-us {
+        0% {
+            opacity: 0;
+            right: -200px;
+        }
+
+        50% {
+            opacity: 0;
+            right: -200px;
+        }
+
+        100% {
+            opacity: 1;
+            right: 0;
+        }
+    }
+
+    legend {
+        color: white;
+    }
 
     fieldset {
-        margin: 0 auto;
+        margin-left: 50%;
+        transform: translateX(-47%);
     }
+
 }
