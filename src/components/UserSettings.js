@@ -16,7 +16,7 @@ class UserSettings extends Component {
         return (
             <div className='userSettings'>
                 <h1 className='settingsTitle'>Settings</h1>
-                <div className="close" onClick={this.props.handleShowUserSettings} ><i class="fas fa-times"></i></div>
+                <div className="close" onClick={this.props.handleShowUserSettings} ><i className="fas fa-times"></i></div>
                 <div className="settingsWrapper">
                     <div className='firstSectWrapper'>
                         <PasswordChanger />

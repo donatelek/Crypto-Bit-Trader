@@ -121,8 +121,8 @@ class BillingAddress extends Component {
 
     render() {
         return (
-            <div class="billingAddress">
-                <div className="close" onClick={this.props.toggleBillingAddress} ><i class="fas fa-times"></i></div>
+            <div className="billingAddress">
+                <div className="close" onClick={this.props.toggleBillingAddress} ><i className="fas fa-times"></i></div>
                 <h1>Billing Addresss</h1>
                 <div className='form'>
                     <label htmlFor="">Address*</label>
@@ -142,8 +142,8 @@ class BillingAddress extends Component {
                     <br />
                     <label htmlFor="">Country*</label>
                     <br />
-                    <select onChange={this.handleInputChange} ref={el => this.countryInput = el} class="form-control" id="selectCountry" name="country">
-                        <option value="" selected="selected">(please select a country)</option>
+                    <select onChange={this.handleInputChange} ref={el => this.countryInput = el} className="form-control" id="selectCountry" name="country">
+                        <option value="" defaultChecked>(please select a country)</option>
                         <Countries />
                     </select>
                     {this.state.countryError && <div className='error countryError'>{this.errors.country}</div>}

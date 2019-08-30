@@ -10,7 +10,6 @@ import Register from './Register'
 import Dashboard from './Dashboard'
 import { Route, withRouter, Switch, Redirect } from 'react-router-dom';
 import * as actionTypes from '../store/actions'
-
 class App extends Component {
   state = {
     fetched: false
@@ -78,13 +77,16 @@ class App extends Component {
     return (
       <>
         {path !== '/dashboard' && <Nav />}
+
         <div className="body-wrap" id='wrapper' ref={el => this.mainWrapper = el}>
           {path !== '/dashboard' && <NavLogo />}
           <Switch>
             <Route path='/register' exact={true} component={Register} />
             <Route path='/login' exact={true} component={Login} />
             <Route path='/' exact={true} component={MainPage} />
-            {this.props.isAuth && <Route path='/dashboard' exact={true} component={Dashboard} />}
+            {this.props.isAuth &&
+              <Route path='/dashboard' exact={true} component={Dashboard} />
+            }
             {path === '/dashboard' && this.state.fetched && !this.props.isAuth ? <Redirect to='/login' /> : null}
           </Switch>
           {path !== '/dashboard' && <Footer />}
