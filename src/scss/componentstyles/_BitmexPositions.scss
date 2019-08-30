@@ -1,0 +1,36 @@
+.bitmexPositions {
+    background-image: linear-gradient(to right top, #3b3939, #383535, #343131, #312d2d, #2e2929);
+    width: 900px;
+    min-height: 80px;
+    position: absolute;
+    font-size: 12px;
+    padding: 0;
+    margin: 0;
+    line-height: inherit;
+    border: 1px solid rgba(128, 128, 128, 0.596);
+
+    ul {
+        display: flex;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+        line-height: inherit;
+
+        li {
+            line-height: inherit;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            width: 150px;
+        }
+    }
+
+    .titles {
+        border-bottom: 1px solid grey;
+
+    }
+
+    .positionsWrapper {
+        border: 1px solid black;
+    }
+}
