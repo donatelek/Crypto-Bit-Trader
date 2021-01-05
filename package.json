@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@coinpaprika/api-nodejs-client": "^1.0.2",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "bitmex-realtime-api": "^0.4.0",
     "blob": "0.0.5",
     "bootstrap": "^4.3.1",
